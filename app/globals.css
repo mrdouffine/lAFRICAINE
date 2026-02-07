@@ -1,0 +1,139 @@
+/* CODE COULEUR & BASE */
+:root {
+    --bg-gray: #b1b1b1;
+    /* Le gris exact du fond */
+    --text-dark: #333333;
+    --hubcity-yellow: #ffff33;
+    /* Le jaune vif caractéristique */
+    --font-size-label: 10px;
+}
+
+/* Disable all animations and transitions */
+*,
+*::before,
+*::after {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+}
+
+body {
+    background-color: var(--bg-gray);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* GRILLE PRINCIPALE (7 Colonnes comme sur l'image) */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    padding: 50px 20px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 45px 15px;
+    /* Espacement vertical plus large que l'horizontal */
+    justify-items: center;
+    align-items: start;
+}
+
+/* ÉLÉMENT INDIVIDUEL */
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    width: 110px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-color: #999;
+    /* Fallback */
+    margin-bottom: 12px;
+}
+
+.item:hover .circle {
+    opacity: 0.8;
+}
+
+.label {
+    font-size: var(--font-size-label);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+/* CAS PARTICULIERS */
+.hubcity {
+    background-color: var(--hubcity-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: lowercase;
+}
+
+.no-image {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* FOOTER SOCIAL */
+.footer {
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 30px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+}
+
+.social-icon.yellow {
+    background-color: var(--hubcity-yellow);
+    border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .menu-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
