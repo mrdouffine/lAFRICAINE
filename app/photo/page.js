@@ -11,6 +11,56 @@ export default function Photo() {
         { id: 2, src: '/images/photo/MG_1039--scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/11/MG_1039--scaled.jpg' },
         { id: 3, src: '/images/photo/MG_1050--scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/11/MG_1050--scaled.jpg' },
         { id: 4, src: '/images/photo/MG_1075--scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/11/MG_1075--scaled.jpg' },
+        { id: 5, src: '/images/photo/MG_1078--scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/11/MG_1078--scaled.jpg' },
+        { id: 6, src: '/images/photo/MG_1096--scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/11/MG_1096--scaled.jpg' },
+        { id: 7, src: '/images/photo/SCAL2208301015-1-scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/SCAL2208301015-1-scaled.jpg' },
+        { id: 8, src: '/images/photo/SCAL2208301024-1-scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/SCAL2208301024-1-scaled.jpg' },
+        { id: 9, src: '/images/photo/SCAL2208301027-1-scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/SCAL2208301027-1-scaled.jpg' },
+        { id: 10, src: '/images/photo/IMG_8576-scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/04/IMG_8576-scaled.jpg' },
+        { id: 11, src: '/images/photo/IMG_8586.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/04/IMG_8586.jpg' },
+        { id: 12, src: '/images/photo/IMG_8582.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/04/IMG_8582.jpg' },
+        { id: 13, src: '/images/photo/Sename-Koffi-Agbodjinou_small.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/11/Sename-Koffi-Agbodjinou_small.png' },
+        { id: 14, src: '/images/photo/11-8.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/11-8.png' },
+        { id: 15, src: '/images/photo/16-1.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/16-1.png' },
+        { id: 16, src: '/images/photo/3-9.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/3-9.jpg' },
+        { id: 17, src: '/images/photo/6_-1-scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/6_-1-scaled.jpg' },
+        { id: 18, src: '/images/photo/8-6.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/8-6.jpg' },
+        { id: 19, src: '/images/photo/9-6.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/9-6.png' },
+        { id: 20, src: '/images/photo/9-7.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/9-7.png' },
+        { id: 21, src: '/images/photo/10-5.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/10-5.png' },
+        { id: 22, src: '/images/photo/12-1.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/12-1.jpg' },
+        { id: 23, src: '/images/photo/61462306_1547142795421194_399570209230290944_o-1.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/61462306_1547142795421194_399570209230290944_o-1.jpg' },
+        { id: 24, src: '/images/photo/14-3.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/14-3.jpg' },
+        { id: 25, src: '/images/photo/20-1-1-scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/20-1-1-scaled.jpg' },
+        { id: 26, src: '/images/photo/7-6-1000x800-2.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/11/7-6-1000x800-2.jpg' },
+        { id: 27, src: '/images/photo/20-2.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/20-2.jpg' },
+        { id: 28, src: '/images/photo/13-2-scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/13-2-scaled.jpg' },
+        { id: 29, src: '/images/photo/Katesi_0.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/Katesi_0.png' },
+        { id: 30, src: '/images/photo/Sename-Koffi-Agbodjinou.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/Sename-Koffi-Agbodjinou.png' },
+        { id: 31, src: '/images/photo/22-1.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/22-1.jpg' },
+        { id: 32, src: '/images/photo/Capture-decran-2016-09-21-a-04.00.13.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/Capture-decran-2016-09-21-a-04.00.13.png' },
+        { id: 33, src: '/images/photo/12628349_1030718446985346_1593670128379673247_o.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/12628349_1030718446985346_1593670128379673247_o.jpg' },
+        { id: 34, src: '/images/photo/12513611_1030717736985417_4981972911708972975_o.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/12513611_1030717736985417_4981972911708972975_o.jpg' },
+        { id: 35, src: '/images/photo/Sename-Koffi-Agbodjinou_Portrait.jpg.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/Sename-Koffi-Agbodjinou_Portrait.jpg.png' },
+        { id: 36, src: '/images/photo/img_4609.jpeg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/img_4609.jpeg' },
+        { id: 37, src: '/images/photo/15-1-scaled.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/15-1-scaled.jpg' },
+        { id: 38, src: '/images/photo/sename.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/11/sename.jpg' },
+        { id: 39, src: '/images/photo/7.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/7.jpg' },
+        { id: 40, src: '/images/photo/10.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/10.jpg' },
+        { id: 41, src: '/images/photo/16.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/16.jpg' },
+        { id: 42, src: '/images/photo/6.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/6.jpg' },
+        { id: 43, src: '/images/photo/EPPKChantier6.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/EPPKChantier6.jpg' },
+        { id: 44, src: '/images/photo/30250_1422543170967_2791861_n.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/30250_1422543170967_2791861_n.jpg' },
+        { id: 45, src: '/images/photo/30250_1422543050964_3612625_n.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/30250_1422543050964_3612625_n.jpg' },
+        { id: 46, src: '/images/photo/10392178_1204772366833_2615913_n.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/10392178_1204772366833_2615913_n.jpg' },
+        { id: 47, src: '/images/photo/10392178_1204071589314_8021967_n.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/10392178_1204071589314_8021967_n.jpg' },
+        { id: 48, src: '/images/photo/0.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/0.jpg' },
+        { id: 49, src: '/images/photo/530300_3506288703303_1946603310_n.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/530300_3506288703303_1946603310_n.jpg' },
+        { id: 50, src: '/images/photo/285341621_726699948376407_5321727115586690048_n.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/285341621_726699948376407_5321727115586690048_n.jpg' },
+        { id: 51, src: '/images/photo/284790006_517939913366361_6746658883517296081_n.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/284790006_517939913366361_6746658883517296081_n.jpg' },
+        { id: 52, src: '/images/photo/324282_2420302794334_1089771841_o.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/324282_2420302794334_1089771841_o.jpg' },
+        { id: 53, src: '/images/photo/333708_2420299314247_1184997561_o.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/333708_2420299314247_1184997561_o.jpg' },
+        { id: 54, src: '/images/photo/228091_1932853088396_2700466_n.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/09/228091_1932853088396_2700466_n.jpg' },
     ];
 
 
@@ -51,20 +101,10 @@ export default function Photo() {
 
                 <div className="right-column">
                     <div className="title-wrapper">
-                        <h1 className="page-title">PHOTO</h1>
+                        <h1 className="page-title">PHOTOS</h1>
                     </div>
 
                     <div className="content-wrapper">
-
-                        <div className="photo-info" style={{ marginBottom: '40px' }}>
-                            <p style={{ fontWeight: 'bold' }}>Sename Koffi AGBODJINOU</p>
-                            <p>Designer x architect x anthropologist by training,</p>
-                            <p>Author, curator, tech- activist & entrepreneur,</p>
-                            <p>Founder : L’Africaine d’architecture,</p>
-                            <p>Founder, funder, catalyst : HubCity/ WoeLab.</p>
-                            <br />
-                            <p style={{ fontStyle: 'italic' }}>Créée par les fondateurs de TEDxParis en 2013, l’Échappée Volée est un do-tank qui met au coeur de sa démarche, l’inspiration, la formation et l’action.</p>
-                        </div>
 
                         <div className="images-grid-container">
                             {photos.map((photo) => (
