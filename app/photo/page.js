@@ -175,7 +175,7 @@ export default function Photo() {
                     height: 100%;
                     object-fit: cover; 
                     display: block;
-                    filter: grayscale(100%);
+                    
                 }
 
                 .bio-wrapper {

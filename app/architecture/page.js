@@ -164,7 +164,7 @@ export default function Architecture() {
                     height: 100%;
                     object-fit: cover; 
                     display: block;
-                    filter: grayscale(100%);
+                    
                 }
 
                 .bio-wrapper {
@@ -231,7 +231,7 @@ export default function Architecture() {
                     width: 100%;
                 }
                 .grid-item { position: relative; width: 100%; padding-bottom: 100%; background: #ccc; overflow: hidden; }
-                .grid-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: transform 0.3s; }
+                .grid-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;  transition: transform 0.3s; }
                 .grid-img:hover { transform: scale(1.05); }
 
                 @media (max-width: 900px) {

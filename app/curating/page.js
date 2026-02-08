@@ -6,7 +6,97 @@ import { useState } from 'react';
 
 
 export default function Curating() {
-    
+    const galleryImages = [
+        { id: 1, src: '/images/curating/1-10-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/1-10-1000x800.jpg' },
+        { id: 2, src: '/images/curating/2-1-2-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/2-1-2-1000x800.jpg' },
+        { id: 3, src: '/images/curating/IMG_3038-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3038-1-1000x800.jpg' },
+        { id: 4, src: '/images/curating/IMG_3046-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3046-1-1000x800.jpg' },
+        { id: 5, src: '/images/curating/IMG_3064-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3064-1-1000x800.jpg' },
+        { id: 6, src: '/images/curating/IMG_3070-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3070-1-1000x800.jpg' },
+        { id: 7, src: '/images/curating/IMG_3090-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3090-1-1000x800.jpg' },
+        { id: 8, src: '/images/curating/IMG_3091-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3091-1-1000x800.jpg' },
+        { id: 9, src: '/images/curating/IMG_3093-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3093-1-1000x800.jpg' },
+        { id: 10, src: '/images/curating/IMG_3094-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3094-1-1000x800.jpg' },
+        { id: 11, src: '/images/curating/IMG_3095-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3095-1-1000x800.jpg' },
+        { id: 12, src: '/images/curating/IMG_3096-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3096-1-1000x800.jpg' },
+        { id: 13, src: '/images/curating/IMG_3097-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3097-1-1000x800.jpg' },
+        { id: 14, src: '/images/curating/IMG_3098-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3098-1-1000x800.jpg' },
+        { id: 15, src: '/images/curating/IMG_3099-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3099-1-1000x800.jpg' },
+        { id: 16, src: '/images/curating/IMG_3100-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3100-1-1000x800.jpg' },
+        { id: 17, src: '/images/curating/IMG_3101-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3101-1-1000x800.jpg' },
+        { id: 18, src: '/images/curating/IMG_3102-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3102-1-1000x800.jpg' },
+        { id: 19, src: '/images/curating/IMG_3103-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3103-1-1000x800.jpg' },
+        { id: 20, src: '/images/curating/IMG_3104-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3104-1-1000x800.jpg' },
+        { id: 21, src: '/images/curating/IMG_3105-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3105-1-1000x800.jpg' },
+        { id: 22, src: '/images/curating/IMG_3106-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3106-1-1000x800.jpg' },
+        { id: 23, src: '/images/curating/IMG_3107-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3107-1-1000x800.jpg' },
+    ];
+
+    const sections = [
+        {
+            title: "COMMISSARIAT",
+            items: [
+                {
+                    heading: "Communalis",
+                    content: "Commissariat et scénographie\nParlement Européen\nBruxelles, Février 2021"
+                },
+                {
+                    heading: "The Currency Lab",
+                    content: "co- Commissariat (with Elom 20ce, Gregor Kasper)\nLomé, WoeLabs Prime, 2021-"
+                },
+                {
+                    heading: "LOME+ : passé, présent, futur,…",
+                    content: "Commissariat et scénographie\nVirtual Exhibition, 2020."
+                },
+                {
+                    heading: "#LowHighTech Design Xperience,",
+                    content: "Direction Artistique (with Marcel Odenbach)\nHochschule Pforzheim, 2018."
+                }
+            ]
+        },
+        {
+            title: "EXPOSANT",
+            items: [
+                {
+                    heading: "Principes de la Cosmoarchitecture",
+                    content: "Biennale d'Architecture de Venise 2020/21\nExpo Centrale, Venise, 2021"
+                },
+                {
+                    heading: "N'GOLÁ Festival",
+                    content: "Biennial of Arts and Culture in São Tomé e Príncipe, 2019."
+                },
+                {
+                    heading: "HubCity,",
+                    content: "'Digital Imaginaries :Africa(s) in Production'\nZKM, Centre d'Art et de Technologies des Médias\nKarlsruhe, 2018."
+                },
+                {
+                    heading: "New York 3D PRINT SHOW",
+                    content: "NYC, 2015."
+                }
+            ]
+        },
+        {
+            title: "CONTRIBUTIONS",
+            items: [
+                {
+                    heading: <><a href="http://postgrowth.art/" target="_blank" rel="noopener noreferrer" className="highlight-link">Post Growth Art</a></>,
+                    content: "Collectif Disnovation (Nicolas Maigret & Maria Roszkowska)\nMuseum für Gestaltung Zürich (DA Z Digital Art Festival 2020)\nZurich, 2020"
+                },
+                {
+                    heading: "iMAL Art Center for Digital Cultures & Technology",
+                    content: "Bruxelles, 2020-2021"
+                },
+                {
+                    heading: <><a href="https://www.dbz.de/news/dbz_2038_3499716.html" target="_blank" rel="noopener noreferrer" className="highlight-link">2038. Die Neue Gelassenheit – Geschichte</a></>,
+                    content: "German Pavilion\nBiennale d'Architecture de Venise 2020/21\nVenise, 2021"
+                },
+                {
+                    heading: "'Readings From Below'",
+                    content: "The Hubs\nTimes Art Center Berlin\nBerlin, 2020"
+                }
+            ]
+        }
+    ];
 
     return (
         <div className="page-container">
@@ -22,15 +112,15 @@ export default function Curating() {
             <div className="main-layout">
                 <div className="left-column">
                     <div className="photo-container">
-                        <Image 
-                            src="/images/curating_portrait.png" 
-                            alt="CURATING" 
-                            width={800} 
+                        <Image
+                            src="/images/curating_portrait.png"
+                            alt="CURATING"
+                            width={800}
                             height={800}
                             className="portrait-img"
                         />
                     </div>
-                    
+
                     <div className="bio-wrapper">
                         <h2 className="person-name">Sename Koffi AGBODJINOU</h2>
                         <div className="short-bio-text">
@@ -46,17 +136,30 @@ export default function Curating() {
                     <div className="title-wrapper">
                         <h1 className="page-title">CURATING</h1>
                     </div>
-                    
+
                     <div className="content-wrapper">
-                        
-            <p>Page in construction. Content will be added shortly.</p>
-        
+                        {sections.map((section, index) => (
+                            <div key={index} className="section-block">
+                                <h3 className="section-title">{section.title}</h3>
+                                <div className="section-items">
+                                    {section.items.map((item, idx) => (
+                                        <div key={idx} className="curating-item">
+                                            <h4 className="item-heading">{item.heading}</h4>
+                                            <p className="item-content" style={{ whiteSpace: 'pre-line' }}>{item.content}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
 
                         <div className="images-grid-container">
-                            <div className="grid-item"><img src="/images/curating_grid_1.jpg" className="grid-img"/></div>
-                            <div className="grid-item"><img src="/images/curating_grid_2.jpg" className="grid-img"/></div>
-                            <div className="grid-item"><img src="/images/curating_grid_3.jpeg" className="grid-img"/></div>
-                            <div className="grid-item"><img src="/images/curating_grid_4.png" className="grid-img"/></div>
+                            {galleryImages.map((image) => (
+                                <div key={image.id} className="grid-item">
+                                    <a href={image.link} target="_blank" rel="noopener noreferrer">
+                                        <img src={image.src} className="grid-img" alt={`Gallery ${image.id}`} />
+                                    </a>
+                                </div>
+                            ))}
                         </div>
 
                     </div>
@@ -70,6 +173,17 @@ export default function Curating() {
                     background-color: #b1b1b1;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
+                }
+
+                .highlight-link { 
+                    color: #e6e600; 
+                    text-decoration: none; 
+                    transition: color 0.3s ease; 
+                    cursor: pointer; 
+                }
+                .highlight-link:hover { 
+                    color: #bfbf00; 
+                    text-decoration: underline; 
                 }
 
                 .page-container {
@@ -118,7 +232,6 @@ export default function Curating() {
                     height: 100%;
                     object-fit: cover; 
                     display: block;
-                    filter: grayscale(100%);
                 }
 
                 .bio-wrapper {
@@ -178,6 +291,21 @@ export default function Curating() {
                 a:hover { text-decoration: underline; }
                 ul { padding-left: 0; list-style-type: none; }
                 
+                .section-block { margin-bottom: 50px; }
+                .section-title { 
+                    font-size: 14px; 
+                    font-weight: bold; 
+                    margin-bottom: 25px; 
+                    text-transform: uppercase; 
+                    letter-spacing: 0.1em; 
+                    border-bottom: 1px solid #000; 
+                    padding-bottom: 5px; 
+                    display: inline-block; 
+                }
+                .curating-item { margin-bottom: 30px; }
+                .item-heading { font-size: 13px; font-weight: bold; margin: 0 0 5px 0; }
+                .item-content { font-size: 11px; margin: 0 0 5px 0; line-height: 1.4; }
+                
                 .images-grid-container { 
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
@@ -185,7 +313,7 @@ export default function Curating() {
                     width: 100%;
                 }
                 .grid-item { position: relative; width: 100%; padding-bottom: 100%; background: #ccc; overflow: hidden; }
-                .grid-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: transform 0.3s; }
+                .grid-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
                 .grid-img:hover { transform: scale(1.05); }
 
                 @media (max-width: 900px) {
