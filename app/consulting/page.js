@@ -167,7 +167,7 @@ export default function Consulting() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #b1b1b1;
+                    background-color: #ffffff;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

@@ -24,7 +24,7 @@ export default function Page2025() {
             </div>
 
             <style jsx global>{`
-                body { margin: 0; padding: 0; background-color: #b1b1b1; font-family: Arial, Helvetica, sans-serif; color: #000; }
+                body { margin: 0; padding: 0; background-color: #ffffff; font-family: Arial, Helvetica, sans-serif; color: #000; }
                 .contact-page { min-height: 100vh; padding: 30px 40px; display: flex; flex-direction: column; position: relative; }
                 .nav-icons { display: flex; justify-content: flex-end; gap: 15px; margin-bottom: 40px; }
                 .nav-link { color: #000; text-decoration: none; }

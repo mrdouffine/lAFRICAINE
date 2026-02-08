@@ -80,7 +80,7 @@ export default function Collaboration() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #b1b1b1;
+                    background-color: #ffffff;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }
@@ -131,7 +131,6 @@ export default function Collaboration() {
                     height: 100%;
                     object-fit: cover; 
                     display: block;
-                    filter: grayscale(100%);
                 }
 
                 .bio-wrapper {
@@ -198,7 +197,6 @@ export default function Collaboration() {
                     width: 100%;
                 }
                 .grid-item { position: relative; width: 100%; padding-bottom: 100%; background: #ccc; overflow: hidden; }
-                .grid-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: transform 0.3s; }
                 .grid-img:hover { transform: scale(1.05); }
 
                 @media (max-width: 900px) {

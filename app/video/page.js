@@ -240,7 +240,7 @@ export default function Video() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #b1b1b1;
+                    background-color: #ffffff;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }
@@ -390,10 +390,10 @@ export default function Video() {
                 
                 
             .video-item { margin-bottom: 40px; }
-            .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; margin-bottom: 10px; }
+            .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #eee; margin-bottom: 10px; }
             .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
             .item-title { font-size: 12px; font-weight: bold; margin: 0 0 5px 0; text-transform: uppercase; }
-            .item-meta { font-size: 11px; color: #444; margin: 0; }
+            .item-meta { font-size: 11px; color: #666; margin: 0; }
         
             `}</style>
         </div>

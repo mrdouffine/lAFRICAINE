@@ -87,7 +87,7 @@ export default function Biography() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #b1b1b1;
+                    background-color: #ffffff;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }
@@ -139,7 +139,6 @@ export default function Biography() {
                     height: 100%;
                     object-fit: cover; /* Cover ici car souvent l'image remplit tout */
                     display: block;
-                    filter: grayscale(100%); /* Noir et blanc */
                 }
 
                 .bio-wrapper {
