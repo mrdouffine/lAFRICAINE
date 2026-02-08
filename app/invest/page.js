@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 export default function Invest() {
-    
+
 
     return (
         <div className="page-container">
@@ -19,38 +19,28 @@ export default function Invest() {
                 </a>
             </div>
 
-            <div className="main-layout">
-                <div className="left-column">
-                    <div className="photo-container">
-                        <Image 
-                            src="/images/invest_portrait.png" 
-                            alt="INVEST" 
-                            width={800} 
-                            height={800}
-                            className="portrait-img"
+            <div className="main-content">
+                <div className="center-block">
+                    <div className="image-wrapper">
+                        <Image
+                            src="/images/invest_portrait.png"
+                            alt="INVEST"
+                            width={500}
+                            height={500}
+                            className="main-image"
                         />
-                    </div>
-                    
-                    <div className="bio-wrapper">
-                        <h2 className="person-name">Sename Koffi AGBODJINOU</h2>
-                        <div className="short-bio-text">
-                            <p>Designer x architect x anthropologist by training,</p>
-                            <p>Author, curator, tech- activist &amp; entrepreneur,</p>
-                            <p>Founder : L'Africaine d'architecture,</p>
-                            <p>Founder, funder, catalyst : HubCity/ WoeLab.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="right-column">
-                    <div className="title-wrapper">
                         <h1 className="page-title">INVEST</h1>
                     </div>
-                    
-                    <div className="content-wrapper">
-                        
-            <p>Page in construction. Content will be added shortly.</p>
-        
+
+                    <div className="bio-section">
+                        <h2 className="person-name">Sename Koffi AGBODJINOU</h2>
+                        <div className="bio-text">
+                            <p>Designer x architect x anthropologist by training,</p>
+                            <p>Curator, tech- activist &amp; entrepreneur,</p>
+                            <p>Founder of L'Africaine d'architecture,</p>
+                            <p>Founder, funder, catalyst of HubCity/ WoeLab.</p>
+                        </div>
+                        <div className="separator">....................</div>
                     </div>
                 </div>
             </div>
@@ -59,7 +49,7 @@ export default function Invest() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #b1b1b1;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }
@@ -75,7 +65,7 @@ export default function Invest() {
                     display: flex;
                     justify-content: flex-end;
                     gap: 20px;
-                    margin-bottom: 40px;
+                    margin-bottom: 60px;
                 }
 
                 .nav-link {
@@ -83,38 +73,49 @@ export default function Invest() {
                     text-decoration: none;
                 }
 
-                .main-layout {
-                    max-width: 1100px;
-                    margin: 0 auto;
-                    display: grid;
-                    grid-template-columns: 320px minmax(300px, 600px); 
-                    gap: 80px; 
+                .main-content {
+                    flex: 1;
+                    display: flex;
                     justify-content: center;
+                    align-items: flex-start;
+                    padding-top: 20px;
                 }
 
-                .left-column {
+                .center-block {
                     display: flex;
                     flex-direction: column;
-                    width: 320px;
-                }
-
-                .photo-container {
-                    width: 320px;
-                    height: 380px; 
-                    background-color: transparent; 
-                    margin-bottom: 20px; 
-                }
-
-                .portrait-img {
+                    align-items: center;
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover; 
+                    max-width: 800px;
+                }
+
+                .image-wrapper {
+                    position: relative;
+                    margin-bottom: 30px;
+                }
+
+                .main-image {
                     display: block;
+                    width: 320px;
+                    height: 320px;
+                    object-fit: cover;
+                    background-color: transparent;
                 }
 
-                .bio-wrapper {
+                .page-title {
+                    font-size: 24px;
+                    font-weight: 500;
+                    letter-spacing: 0.1em;
+                    margin: 0;
+                    position: absolute;
+                    bottom: 0;
+                    right: -140px;
+                    text-transform: uppercase;
+                }
+
+                .bio-section {
                     text-align: center;
-                    width: 100%;
+                    margin-top: 20px;
                 }
 
                 .person-name {
@@ -123,89 +124,34 @@ export default function Invest() {
                     margin: 0 0 15px 0;
                     letter-spacing: 0.05em;
                     text-transform: uppercase;
-                    text-align: center;
                 }
 
-                .short-bio-text {
+                .bio-text p {
                     font-size: 10px;
-                    line-height: 1.5;
-                    letter-spacing: 0.01em;
-                    text-align: center;
-                }
-                .short-bio-text p { margin: 0; }
-
-
-                .right-column {
-                    display: flex;
-                    flex-direction: column;
+                    margin: 0 0 2px 0;
+                    line-height: 1.4;
                 }
 
-                .title-wrapper {
-                    height: 380px; 
-                    display: flex;
-                    align-items: flex-end; 
-                    padding-bottom: 0px; 
-                    margin-bottom: 20px; 
+                .separator {
+                    margin-top: 30px;
+                    font-size: 10px;
+                    letter-spacing: 2px;
+                    opacity: 0.6;
                 }
 
-                .page-title {
-                    font-size: 24px;
-                    font-weight: 500;
-                    letter-spacing: 0.1em;
-                    margin: 0;
-                    line-height: 1;
-                    transform: translateY(5px); 
-                    text-transform: uppercase;
-                }
-
-                .content-wrapper {
-                    margin-top: 50px; 
-                    padding-left: 0;
-                    text-align: justify;
-                }
-                
-                p { margin-bottom: 12px; font-size: 11px; line-height: 1.5; }
-                a { color: #000; text-decoration: none; }
-                a:hover { text-decoration: underline; }
-                ul { padding-left: 0; list-style-type: none; }
-                
-                .images-grid-container { 
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 5px;
-                    width: 100%;
-                }
-                .grid-item { position: relative; width: 100%; padding-bottom: 100%; background: #ccc; overflow: hidden; }
-                .grid-img:hover { transform: scale(1.05); }
-
-                @media (max-width: 900px) {
-                    .main-layout {
-                        grid-template-columns: 1fr;
-                        justify-items: center;
-                        gap: 30px;
-                    }
-                    .title-wrapper {
-                        height: auto;
-                        margin-top: 20px;
-                        margin-bottom: 20px;
-                        justify-content: center;
+                @media (max-width: 600px) {
+                    .page-title {
+                        position: static;
+                        margin-top: 15px;
                         text-align: center;
+                        right: auto;
                     }
-                    .left-column, .right-column {
-                        width: 100%;
+                    .image-wrapper {
+                        display: flex;
+                        flex-direction: column;
                         align-items: center;
                     }
-                    .content-wrapper {
-                        margin-top: 0;
-                        padding: 0 10px;
-                    }
-                    .photo-container {
-                        height: auto;
-                        min-height: 320px;
-                    }
                 }
-                
-                
             `}</style>
         </div>
     )
