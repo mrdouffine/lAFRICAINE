@@ -2,12 +2,8 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
-
 
 export default function Lessons() {
-    
-
     return (
         <div className="page-container">
             <div className="nav-icons">
@@ -19,38 +15,34 @@ export default function Lessons() {
                 </a>
             </div>
 
-            <div className="main-layout">
-                <div className="left-column">
-                    <div className="photo-container">
-                        <Image 
-                            src="/images/lessons_portrait.png" 
-                            alt="LESSONS" 
-                            width={800} 
-                            height={800}
-                            className="portrait-img"
+            <div className="main-grid">
+
+                <div className="left-panel">
+                    <div className="image-wrapper">
+                        <Image
+                            src="/images/lessons_portrait.png"
+                            alt="Sénamé Koffi AGBODJINOU"
+                            width={500}
+                            height={500}
+                            className="main-image"
                         />
                     </div>
-                    
-                    <div className="bio-wrapper">
-                        <h2 className="person-name">Sename Koffi AGBODJINOU</h2>
-                        <div className="short-bio-text">
-                            <p>Designer x architect x anthropologist by training,</p>
-                            <p>Author, curator, tech- activist &amp; entrepreneur,</p>
-                            <p>Founder : L'Africaine d'architecture,</p>
-                            <p>Founder, funder, catalyst : HubCity/ WoeLab.</p>
+
+                    <div className="bio-section">
+                        <h2 className="person-name">Sénamé Koffi AGBODJINOU</h2>
+                        <div className="bio-text">
+                            <p>Designer x architect and anthropologist by training,</p>
+                            <p>Author, curator, tech- activist; entrepreneur,</p>
+                            <p>Founder of L’Africaine d’architecture,</p>
+                            <p>Founder, funder, catalyst of HubCity/ WoeLab.</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="right-column">
-                    <div className="title-wrapper">
-                        <h1 className="page-title">LESSONS</h1>
-                    </div>
-                    
-                    <div className="content-wrapper">
-                        
-            <p>Page in construction. Content will be added shortly.</p>
-        
+                <div className="right-panel">
+                    <h1 className="page-title">LESSONS</h1>
+                    <div className="content-dots">
+                        .............
                     </div>
                 </div>
             </div>
@@ -59,8 +51,8 @@ export default function Lessons() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
-                    font-family: Arial, Helvetica, sans-serif;
+                    background-color: #BEBEBE;
+                    font-family: 'Ubuntu', sans-serif;
                     color: #000;
                 }
 
@@ -83,38 +75,64 @@ export default function Lessons() {
                     text-decoration: none;
                 }
 
-                .main-layout {
-                    max-width: 1100px;
-                    margin: 0 auto;
+                .main-grid {
                     display: grid;
-                    grid-template-columns: 320px minmax(300px, 600px); 
-                    gap: 80px; 
-                    justify-content: center;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 60px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    width: 100%;
+                    align-items: start;
                 }
 
-                .left-column {
+                .left-panel {
                     display: flex;
                     flex-direction: column;
-                    width: 320px;
+                    align-items: center; 
+                    margin-top: 50px;
                 }
 
-                .photo-container {
-                    width: 320px;
-                    height: 380px; 
-                    background-color: transparent; 
-                    margin-bottom: 20px; 
+                .right-panel {
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 320px; /* Align with bottom of image area roughly */
                 }
 
-                .portrait-img {
+                .image-wrapper {
+                    position: relative;
+                    margin-bottom: 30px;
+                    width: 320px; 
+                    height: 320px;
+                }
+
+                .main-image {
+                    display: block;
                     width: 100%;
                     height: 100%;
-                    object-fit: cover; 
-                    display: block;
+                    object-fit: cover;
+                    background-color: transparent;
+                    filter: grayscale(100%);
                 }
 
-                .bio-wrapper {
+                .page-title {
+                    font-size: 30px;
+                    font-weight: 500;
+                    letter-spacing: 0.05em;
+                    margin: 0 0 20px 0;
+                    padding-left: 0; 
+                    text-transform: uppercase;
+                    text-align: left;
+                }
+
+                .content-dots {
+                    font-size: 24px;
+                    letter-spacing: 5px;
+                    color: #000;
+                }
+
+                .bio-section {
                     text-align: center;
-                    width: 100%;
+                    width: 320px; 
                 }
 
                 .person-name {
@@ -123,89 +141,35 @@ export default function Lessons() {
                     margin: 0 0 15px 0;
                     letter-spacing: 0.05em;
                     text-transform: uppercase;
-                    text-align: center;
                 }
 
-                .short-bio-text {
+                .bio-text p {
                     font-size: 10px;
-                    line-height: 1.5;
-                    letter-spacing: 0.01em;
-                    text-align: center;
-                }
-                .short-bio-text p { margin: 0; }
-
-
-                .right-column {
-                    display: flex;
-                    flex-direction: column;
+                    margin: 0 0 2px 0;
+                    line-height: 1.4;
+                    font-weight: bold;
                 }
 
-                .title-wrapper {
-                    height: 380px; 
-                    display: flex;
-                    align-items: flex-end; 
-                    padding-bottom: 0px; 
-                    margin-bottom: 20px; 
-                }
-
-                .page-title {
-                    font-size: 24px;
-                    font-weight: 500;
-                    letter-spacing: 0.1em;
-                    margin: 0;
-                    line-height: 1;
-                    transform: translateY(5px); 
-                    text-transform: uppercase;
-                }
-
-                .content-wrapper {
-                    margin-top: 50px; 
-                    padding-left: 0;
-                    text-align: justify;
-                }
-                
-                p { margin-bottom: 12px; font-size: 11px; line-height: 1.5; }
-                a { color: #000; text-decoration: none; }
-                a:hover { text-decoration: underline; }
-                ul { padding-left: 0; list-style-type: none; }
-                
-                .images-grid-container { 
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 5px;
-                    width: 100%;
-                }
-                .grid-item { position: relative; width: 100%; padding-bottom: 100%; background: #ccc; overflow: hidden; }
-                .grid-img:hover { transform: scale(1.05); }
-
-                @media (max-width: 900px) {
-                    .main-layout {
+                @media (max-width: 800px) {
+                    .main-grid {
                         grid-template-columns: 1fr;
-                        justify-items: center;
-                        gap: 30px;
+                        gap: 40px;
                     }
-                    .title-wrapper {
-                        height: auto;
-                        margin-top: 20px;
-                        margin-bottom: 20px;
-                        justify-content: center;
+                    .right-panel {
+                        padding-top: 0;
+                        align-items: center;
                         text-align: center;
                     }
-                    .left-column, .right-column {
-                        width: 100%;
-                        align-items: center;
+                    .page-title {
+                        text-align: center;
                     }
-                    .content-wrapper {
-                        margin-top: 0;
-                        padding: 0 10px;
+                    .image-wrapper {
+                         margin: 0 auto 30px auto;
                     }
-                    .photo-container {
-                        height: auto;
-                        min-height: 320px;
+                    .bio-section {
+                        margin: 0 auto;
                     }
                 }
-                
-                
             `}</style>
         </div>
     )
