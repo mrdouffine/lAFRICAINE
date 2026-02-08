@@ -210,7 +210,7 @@ export default function Curating() {
                     margin: 0 auto;
                     display: grid;
                     grid-template-columns: 320px minmax(300px, 600px); 
-                    gap: 80px; 
+                    gap: 40px; 
                     justify-content: center;
                 }
 
@@ -316,7 +316,7 @@ export default function Curating() {
                 .grid-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
                 .grid-img:hover { transform: scale(1.05); }
 
-                @media (max-width: 900px) {
+                @media (max-width: 600px) {
                     .main-layout {
                         grid-template-columns: 1fr;
                         justify-items: center;

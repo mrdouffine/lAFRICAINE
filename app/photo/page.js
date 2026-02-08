@@ -155,7 +155,7 @@ export default function Photo() {
                     margin: 0 auto;
                     display: grid;
                     grid-template-columns: 320px minmax(300px, 600px); 
-                    gap: 80px; 
+                    gap: 40px; 
                     justify-content: center;
                 }
 
@@ -244,10 +244,11 @@ export default function Photo() {
                     width: 100%;
                 }
                 .grid-item { position: relative; width: 100%; padding-bottom: 100%; background: #ccc; overflow: hidden; }
+                .grid-item a { display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 2; }
                 .grid-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
                 .grid-img:hover { transform: scale(1.05); }
 
-                @media (max-width: 900px) {
+                @media (max-width: 600px) {
                     .main-layout {
                         grid-template-columns: 1fr;
                         justify-items: center;

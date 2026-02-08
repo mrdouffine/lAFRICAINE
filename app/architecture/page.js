@@ -158,12 +158,14 @@ export default function Architecture() {
                         <div className="images-grid-container">
                             {galleryImages.map((filename, index) => (
                                 <div key={index} className="grid-item">
-                                    <img
-                                        src={`/images/architecture/${filename}`}
-                                        className="grid-img"
-                                        alt={`Architecture ${index + 1}`}
-                                        loading="lazy"
-                                    />
+                                    <a href={`/images/architecture/${filename}`} target="_blank" rel="noopener noreferrer">
+                                        <img
+                                            src={`/images/architecture/${filename}`}
+                                            className="grid-img"
+                                            alt={`Architecture ${index + 1}`}
+                                            loading="lazy"
+                                        />
+                                    </a>
                                 </div>
                             ))}
                         </div>

@@ -294,7 +294,9 @@ export default function Press() {
                         <div className="images-grid-container">
                             {galleryImages.map((src, index) => (
                                 <div key={index} className="grid-item">
-                                    <img src={src} alt={`Press gallery ${index}`} className="grid-img" />
+                                    <a href={src} target="_blank" rel="noopener noreferrer">
+                                        <img src={src} alt={`Press gallery ${index}`} className="grid-img" />
+                                    </a>
                                 </div>
                             ))}
                         </div>
