@@ -1,49 +1,61 @@
-
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
 
-
 export default function Quotes() {
     const quotes = [
-        "« Au commerce des idées, il y a les produits en vitrine… et d’autres qu’il faut aller chercher au fond de la boutique »",
-        "« Où je suis être quelqu’un, Faire quelque chose de passer, Travailler à mourir quelque part … »",
-        "« Faut le faire l’tour des choses pour comprendre qu’elles sont pas au centre »",
-        "« Le propre des époques quelque peu troublées est, du milieu de l’antagonisme des principes, de provoquer parfois quelque contradiction étonnamment heureuse. »",
-        "« Le monde est désormais divisé en deux. Ceux qui réussissent et ceux qui résistent. »",
-        "« Qui contrôle le futur contrôle le présent. »"
+        {
+            text: ["Au commerce des idées, il y a les produits en vitrine… et d’autres qu’il faut aller chercher au fond de la boutique"]
+        },
+        {
+            text: [
+                "Où je suis être quelqu’un,",
+                "Faire quelque chose de passer,",
+                "Travailler à mourir quelque part …"
+            ]
+        },
+        {
+            text: ["Faut le faire l’tour des choses pour comprendre qu’elles sont pas au centre"]
+        },
+        {
+            text: ["Le propre des époques quelque peu troublées est, du milieu de l’antagonisme des principes, de provoquer parfois quelque contradiction étonnamment heureuse."]
+        },
+        {
+            text: ["Le monde est désormais divisé en deux. Ceux qui réussissent et ceux qui résistent."]
+        },
+        {
+            text: ["Qui contrôle le futur contrôle le présent."]
+        }
     ];
-
-
 
     return (
         <div className="page-container">
             <div className="nav-icons">
-                <Link href="/" className="nav-link">
+                <Link href="/menu" className="nav-link">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /></svg>
                 </Link>
-                <a href="mailto:contact@lafricaine.org" className="nav-link">
+                <Link href="/contact" className="nav-link">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
-                </a>
+                </Link>
             </div>
 
             <div className="main-layout">
                 <div className="left-column">
                     <div className="photo-container">
-                        <Image 
-                            src="/images/quotes_portrait.png" 
-                            alt="QUOTES" 
-                            width={800} 
-                            height={800}
+                        <Image
+                            src="/images/quotes_portrait.png"
+                            alt="QUOTES"
+                            width={1024}
+                            height={1024}
                             className="portrait-img"
                         />
                     </div>
-                    
+
                     <div className="bio-wrapper">
                         <h2 className="person-name">Sename Koffi AGBODJINOU</h2>
                         <div className="short-bio-text">
                             <p>Designer x architect x anthropologist by training,</p>
-                            <p>Author, curator, tech- activist &amp; entrepreneur,</p>
+                            <p>Autor, curator, tech- activist &amp; entrepreneur,</p>
                             <p>Founder : L'Africaine d'architecture,</p>
                             <p>Founder, funder, catalyst : HubCity/ WoeLab.</p>
                         </div>
@@ -54,11 +66,26 @@ export default function Quotes() {
                     <div className="title-wrapper">
                         <h1 className="page-title">QUOTES</h1>
                     </div>
-                    
+
                     <div className="content-wrapper">
-                        
-            <p>Page in construction. Content will be added shortly.</p>
-        
+                        <div className="quotes-list">
+                            {quotes.map((quote, index) => (
+                                <div key={index}>
+                                    <div className="quote-item">
+                                        <div className="quote-mark">«</div>
+                                        <div className="quote-content">
+                                            {quote.text.map((line, idx) => (
+                                                <p key={idx}>{line}</p>
+                                            ))}
+                                        </div>
+                                        <div className="quote-mark">»</div>
+                                    </div>
+                                    {index < quotes.length - 1 && (
+                                        <div className="separator">...</div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,7 +95,7 @@ export default function Quotes() {
                     margin: 0;
                     padding: 0;
                     background-color: #b1b1b1;
-                    font-family: Arial, Helvetica, sans-serif;
+                    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
                     color: #000;
                 }
 
@@ -118,7 +145,6 @@ export default function Quotes() {
                     height: 100%;
                     object-fit: cover; 
                     display: block;
-                    filter: grayscale(100%);
                 }
 
                 .bio-wrapper {
@@ -136,13 +162,12 @@ export default function Quotes() {
                 }
 
                 .short-bio-text {
-                    font-size: 10px;
+                    font-size: 8.25px;
                     line-height: 1.5;
                     letter-spacing: 0.01em;
                     text-align: center;
                 }
                 .short-bio-text p { margin: 0; }
-
 
                 .right-column {
                     display: flex;
@@ -158,7 +183,7 @@ export default function Quotes() {
                 }
 
                 .page-title {
-                    font-size: 24px;
+                    font-size: 30px;
                     font-weight: 500;
                     letter-spacing: 0.1em;
                     margin: 0;
@@ -170,23 +195,36 @@ export default function Quotes() {
                 .content-wrapper {
                     margin-top: 50px; 
                     padding-left: 0;
-                    text-align: justify;
                 }
-                
-                p { margin-bottom: 12px; font-size: 11px; line-height: 1.5; }
-                a { color: #000; text-decoration: none; }
-                a:hover { text-decoration: underline; }
-                ul { padding-left: 0; list-style-type: none; }
-                
-                .images-grid-container { 
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 5px;
-                    width: 100%;
+
+                .quotes-list {
+                    margin-bottom: 60px;
                 }
-                .grid-item { position: relative; width: 100%; padding-bottom: 100%; background: #ccc; overflow: hidden; }
-                .grid-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: transform 0.3s; }
-                .grid-img:hover { transform: scale(1.05); }
+
+                .quote-item {
+                    margin-bottom: 10px;
+                    font-style: italic;
+                    font-size: 13px;
+                    line-height: 1.6;
+                }
+
+                .quote-mark {
+                    margin: 15px 0;
+                    font-style: normal;
+                    font-size: 14px;
+                }
+
+                .quote-content p {
+                    margin: 0;
+                    text-align: left;
+                }
+
+                .separator {
+                    text-align: left;
+                    padding: 30px 0;
+                    font-size: 13px;
+                    color: #000;
+                }
 
                 @media (max-width: 900px) {
                     .main-layout {
@@ -213,9 +251,13 @@ export default function Quotes() {
                         height: auto;
                         min-height: 320px;
                     }
+                    .separator {
+                        padding: 30px 0;
+                    }
+                    .page-title {
+                        text-align: center;
+                    }
                 }
-                
-                
             `}</style>
         </div>
     )
