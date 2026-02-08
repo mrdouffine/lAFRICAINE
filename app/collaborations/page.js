@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Collaboration() {
+export default function Collaborations() {
     return (
         <div className="page-container">
             <div className="nav-icons">
@@ -40,7 +40,7 @@ export default function Collaboration() {
                 </div>
 
                 <div className="right-panel">
-                    <h1 className="page-title">COLLABORATIONS</h1>
+                    <h1 className="page-title">COLLABORATIONS .............</h1>
 
                     <div className="content-listing">
 
@@ -61,7 +61,7 @@ export default function Collaboration() {
                             <p><a href="https://youtube.com/playlist?list=PL498F766A8DC2D6D5" target="_blank" rel="noopener noreferrer"><span className="highlight">Aux Impossibles Imminents !</span></a></p>
                             <p className="description">
                                 Double triptyque vidéo<br />
-                                En une descente incroyablement profond dans le quotidien de la ville de Lomé à partir de figures qui professent l'imminence d'impossibles éthiques et libérateurs, Elom 20ce a conçu et réalisé une fresque urbaine en 6 tableaux : "Blacky", "Mawuto", "Yao", "Kezita", "Alex", "Bertha" dans le cadre du projet curatorial LOME+. Six épisodes de rigoureusement 13 min chacunes mises en espace dans l exposition pour fonctionner ensemble et qui font du clip du 1er morceau de l'album "Amewuga", une unique œuvre d'art documentaire !
+                                En une descente incroyablement profond dans le quotidien de la ville de Lomé à partir de figures qui professent l'imminence d'impossibles éthiques et libérateurs, Elom 20ce a conçu et réalisé une fresque urbaine en 6 tableaux : "Blacky", "Mawuto", "Yao", "Kezita", "Alex", "Bertha" dans le cadre du projet curatorial LOMÉ+. Six épisodes de rigoureusement 13 min chacunes mises en espace dans l exposition pour fonctionner ensemble et qui font du clip du 1er morceau de l'album "Amewuga", une unique œuvre d'art documentaire !
                             </p>
                             <p>2019</p>
                         </div>
