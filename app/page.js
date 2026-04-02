@@ -82,24 +82,23 @@ export default function Home() {
                     </Link>
                     {/* Placeholder for others if not downloaded perfectly, reusing similar patterns or keeping structure */}
                     <Link href="/honor" className="item">
-                        {/* Honor might share or use placeholder if not found. Let's use a generic or the tech one as fallback if not downloaded */}
-                        <div className="circle" style={{ backgroundImage: "url('/images/menu/menu_tech.png')" }}></div>
+                        <div className="circle" style={{ backgroundImage: "url('/images/honor_portrait.png')" }}></div>
                         <span className="label">HONOR</span>
                     </Link>
                     <Link href="/press" className="item">
-                        <div className="circle" style={{ backgroundImage: "url('/images/menu/menu_curating.png')" }}></div>
+                        <div className="circle" style={{ backgroundImage: "url('/images/press_portrait.png')" }}></div>
                         <span className="label">PRESS</span>
                     </Link>
                     <Link href="/commitment" className="item">
-                        <div className="circle" style={{ backgroundImage: "url('/images/menu/menu_lectures.png')" }}></div>
+                        <div className="circle" style={{ backgroundImage: "url('/images/commitment_portrait.png')" }}></div>
                         <span className="label">COMMITMENT</span>
                     </Link>
                     <Link href="/invest" className="item">
-                        <div className="circle" style={{ backgroundImage: "url('/images/menu/menu_consulting.png')" }}></div>
+                        <div className="circle" style={{ backgroundImage: "url('/images/invest_portrait.png')" }}></div>
                         <span className="label">INVEST</span>
                     </Link>
                     <Link href="/board" className="item">
-                        <div className="circle" style={{ backgroundImage: "url('/images/menu/menu_academic.png')" }}></div>
+                        <div className="circle" style={{ backgroundImage: "url('/images/board_portrait.jpg')" }}></div>
                         <span className="label">BOARD</span>
                     </Link>
 
