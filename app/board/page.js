@@ -83,7 +83,7 @@ export default function Board() {
                             </div>
 
                             <div className="listing-item">
-                                <p>AMA 4 AFRICA</p>
+                                <p>MMA 4 AFRICA</p>
                                 <p>The LionHeart Initiative</p>
                                 <p>Togo Coordinator</p>
                                 <p>2019 –</p>
@@ -160,7 +160,7 @@ export default function Board() {
                     margin: 0;
                     padding: 0;
                     background-color: #BEBEBE;
-                    font-family: 'Ubuntu', sans-serif;
+                    font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }
 
@@ -278,7 +278,7 @@ export default function Board() {
                 .listing-item p { margin: 0; }
 
                 .highlight {
-                    color: #ffff00; /* Yellow highlight text */
+                    color: #e6e600; /* Yellow highlight text */
                     font-weight: bold;
                     text-decoration: none;
                     transition: opacity 0.2s;

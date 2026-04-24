@@ -31,7 +31,7 @@ export default function Quotes() {
     return (
         <div className="page-container">
             <div className="nav-icons">
-                <Link href="/menu" className="nav-link">
+                <Link href="/" className="nav-link">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /></svg>
                 </Link>
                 <Link href="/contact" className="nav-link">
@@ -55,7 +55,7 @@ export default function Quotes() {
                         <h2 className="person-name">Sename Koffi AGBODJINOU</h2>
                         <div className="short-bio-text">
                             <p>Designer x architect x anthropologist by training,</p>
-                            <p>Autor, curator, tech- activist &amp; entrepreneur,</p>
+                            <p>Author, curator, tech- activist &amp; entrepreneur,</p>
                             <p>Founder : L'Africaine d'architecture,</p>
                             <p>Founder, funder, catalyst : HubCity/ WoeLab.</p>
                         </div>
@@ -162,7 +162,7 @@ export default function Quotes() {
                 }
 
                 .short-bio-text {
-                    font-size: 8.25px;
+                    font-size: 10px;
                     line-height: 1.5;
                     letter-spacing: 0.01em;
                     text-align: center;
@@ -183,7 +183,7 @@ export default function Quotes() {
                 }
 
                 .page-title {
-                    font-size: 30px;
+                    font-size: 24px;
                     font-weight: 500;
                     letter-spacing: 0.1em;
                     margin: 0;

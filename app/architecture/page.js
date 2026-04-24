@@ -9,6 +9,10 @@ export default function Architecture() {
             link: "https://docs.google.com/presentation/d/1ATySHMJvkHjF-h98N6dUSrdRvmv4rILv-YWxGnEj_I4/edit?usp=sharing"
         },
         {
+            title: "Alternativ Techcontainers Village",
+            link: "https://docs.google.com/presentation/d/1RTCAec0VNrOnklz1jmgzRyDyoUKZEMA6o-YI2bZ2NJs/edit"
+        },
+        {
             title: "Maison des traditions « Gbegbe », Agouegan",
             link: "https://docs.google.com/presentation/d/1IHPkw9f5qGlFFjuvqoMkZxpKR-qI_HTXVWp56ilW07Q/edit?usp=sharing"
         },
@@ -300,7 +304,7 @@ export default function Architecture() {
                 }
 
                 .project-external-link {
-                    color: rgb(255, 223, 0);
+                    color: #e6e600;
                     text-decoration: none;
                     font-size: 13px;
                     word-break: break-all;

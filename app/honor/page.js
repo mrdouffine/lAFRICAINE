@@ -51,7 +51,7 @@ export default function Honor() {
     return (
         <div className="page-container">
             <div className="nav-icons">
-                <Link href="/menu" className="nav-link">
+                <Link href="/" className="nav-link">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /></svg>
                 </Link>
                 <Link href="/contact" className="nav-link">
@@ -134,7 +134,7 @@ export default function Honor() {
                     margin: 0;
                     padding: 0;
                     background-color: #ffffff;
-                    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+                    font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }
 
@@ -201,7 +201,7 @@ export default function Honor() {
                 }
 
                 .short-bio-text {
-                    font-size: 8.25px;
+                    font-size: 10px;
                     line-height: 1.5;
                     letter-spacing: 0.01em;
                     text-align: center;
@@ -222,7 +222,7 @@ export default function Honor() {
                 }
 
                 .page-title {
-                    font-size: 30px;
+                    font-size: 24px;
                     font-weight: 500;
                     letter-spacing: 0.1em;
                     margin: 0;
@@ -267,7 +267,7 @@ export default function Honor() {
                 }
 
                 .highlight-link {
-                    color: #FFDF00;
+                    color: #e6e600;
                     text-decoration: none;
                 }
 

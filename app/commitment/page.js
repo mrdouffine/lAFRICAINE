@@ -261,7 +261,7 @@ export default function Commitment() {
                 a:hover { text-decoration: underline; }
                 
                 .highlight-link {
-                    color: #eeee00;
+                    color: #e6e600;
                     font-weight: bold;
                     word-break: break-all;
                 }

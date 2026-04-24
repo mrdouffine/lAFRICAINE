@@ -1,0 +1,24 @@
+mkdir -p public/images/menu
+curl -L "https://sename.lafricaine.org/wp-content/uploads/2021/12/21_Reseaux.jpg" -o public/images/hero_main.jpg
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-1-r1xe376lzrcchn224s6ugdn9nebdbydw2xb63g4hl0.png" -o public/images/menu/menu_contact.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/SSS-r1xe32hf1l5wvl8vw85plwtyogyj9gv8ea1qp2bgg4.png" -o public/images/menu/menu_biography.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-2-r1xe3a04k9g7ggxyobeq5uxnfjxgz1p33b9mja0b2c.png" -o public/images/menu/menu_edition.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-4-r1xe3bvsxxis3ov8dc7zaugkmbo7efwjrkklhtxipw.png" -o public/images/menu/menu_lectures.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-5-r1xe33f98f77777iqqkc6elf9utwh5yyqep86ca29w.png" -o public/images/menu/menu_consulting.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-6-r1xe31jkur4mjza91pr31f2i33361rri25e97scumc.png" -o public/images/menu/menu_academic.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-Audio-r1xe32hf1l5wvl8vw85plwtyogyj9gv8ea1qp2bgg4.png" -o public/images/menu/menu_audio.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-8-r1xe34d3f98hit65l8yyqwcvv8p9ov2p2jcpnm8o3o.png" -o public/images/menu/menu_video.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-9-r1xe392adfex4uzbtt03ld66u623rclcr6m5201p8k.png" -o public/images/menu/menu_photo.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/HUBCITY-r1xe3ctn4rk2fatv7umlvc817pjkm50a3p82z3w4jo.png" -o public/images/menu/menu_hubcity.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-10-r1xe30lqnx3c8dbm77cggxb1hp7su2nrq0qrqie8sk.png" -o public/images/menu/menu_curating.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-11-r1xe2yq2a90rl5eci6j7bxs4axh2eogb1rfsryh150.png" -o public/images/menu/menu_tech.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-7-r1xe3a04k9g7ggxyobeq5uxnfjxgz1p33b9mja0b2c.png" -o public/images/menu/menu_lessons.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-13-r1xe31jkur4mjza91pr31f2i33361rri25e97scumc.png" -o public/images/menu/menu_architecture.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-14-r1xe3bvsxxis3ov8dc7zaugkmbo7efwjrkklhtxipw.png" -o public/images/menu/menu_publication.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-15-r1xe392adfex4uzbtt03ld66u623rclcr6m5201p8k.png" -o public/images/menu/menu_quotes.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/60-r1xe2ng008lbptuqc1noi0ml6b0nub7j07lz0mxr7o.jpg" -o public/images/menu/menu_collaboration.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-17-r1xe384g6ldmt90ozalh0veq8s6qjnhmf1ynkq33es.png" -o public/images/menu/menu_honor.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-18-r1xe392adfex4uzbtt03ld66u623rclcr6m5201p8k.png" -o public/images/menu/menu_press.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-12-r1xe32hf1l5wvl8vw85plwtyogyj9gv8ea1qp2bgg4.png" -o public/images/menu/menu_commitment.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/2021/12/21_Reseaux.jpg" -o public/images/menu/menu_invest.png
+curl -L "https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs/Sename-19-r1xe2xs83ezh9jfpno4krg0npjlp6zckpmsbaoifb8.png" -o public/images/menu/menu_board.png

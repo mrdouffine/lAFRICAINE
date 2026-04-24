@@ -119,16 +119,16 @@ export default function Contact() {
         }
 
         .person-name {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: bold;
             margin: 0 0 15px 0;
-            text-align: center; /* Le nom reste centré généralement, ou justifié si vous préférez, je le laisse centré pour l'instant comme l'original */
+            text-align: center; 
             letter-spacing: 0.05em;
             text-transform: uppercase;
         }
 
         .bio-text {
-          font-size: 9px;
+          font-size: 10px;
           line-height: 1.6;
           letter-spacing: 0.01em;
           text-align: justify;

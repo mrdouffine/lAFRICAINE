@@ -72,7 +72,7 @@ export default function Tech() {
                         <h2 className="person-name">Sename Koffi AGBODJINOU</h2>
                         <div className="short-bio-text">
                             <p>Designer x architect x anthropologist by training,</p>
-                            <p>Autor, curator, tech- activist &amp; entrepreneur,</p>
+                            <p>Author, curator, tech- activist &amp; entrepreneur,</p>
                             <p>Founder : L'Africaine d'architecture,</p>
                             <p>Founder, funder, catalyst : WoeLab.</p>
                         </div>
