@@ -22,6 +22,7 @@ export default function Home() {
         { label: 'HubCity', img: '/images/menu/menu_hubcity.png', href: 'https://hubcity.africa/', external: true },
         { label: 'CURATING', img: '/images/menu/menu_curating.png', href: '/curating' },
         { label: 'TECH', img: '/images/menu/menu_tech.png', href: '/tech' },
+        { isEmpty: true },
         { label: 'LESSONS', img: '/images/menu/menu_lessons.png', href: '/lessons' },
         { label: 'ARCHITECTURE', img: '/images/menu/menu_architecture.png', href: '/architecture' },
         { label: 'PUBLICATION', img: '/images/menu/menu_publication.png', href: '/publication' },
@@ -32,6 +33,7 @@ export default function Home() {
         { label: 'COMMITMENT', img: '/images/menu/menu_commitment.png', href: '/commitment' },
         { label: 'INVEST', img: '/images/menu/menu_invest.png', href: '/invest' },
         { label: 'BOARD', img: '/images/menu/menu_board.png', href: '/board' },
+        { label: 'EDITIONS', href: 'https://editions.lafricaine.org/', external: true, isYellow: true, textInside: 'EDITIONS' },
     ];
 
     const OpenAISVG = (
@@ -94,41 +96,74 @@ export default function Home() {
             label: 'Wikipedia',
             href: 'https://fr.wikipedia.org/wiki/S%C3%A9nam%C3%A9_Koffi_Agbodjinou',
             // Logo W (stylized Wikipedia W)
-            svg: <svg viewBox="0 0 640 512" width="18" height="18"><path d="M640 51.2l-.3 12.2c-28.1.8-45 15.8-55.8 40.3-25 57.8-156.4 429.3-164.3 452h-32.1c-16.3-49.2-79.4-214.8-103.8-275.1-28.1 71-83.3 221.2-100.1 275.1h-32.1C143.5 442.6 14.9 157.3 13.9 147.2c0-1.5-.5-5.2-.5-6.8H0L0 115.2h224v25.4H192c-16.3 0-22.9 16.3-14.4 33.6l117 265.2 44.2-115-30.1-67.8c-12.5-28.1-29.6-116.5-51.6-116.5h-32.1V115.2h224v25.4H449c-28.6 0-34.6 14.4-22.4 40.8l109.2 271.5 44.7-116.5c-14.4-35.6-28.6-71.5-28.6-107.4 0-58.7 40.3-88.8 87.4-88.8h.8z" /></svg>
+            svg: <svg viewBox="0 0 640 512" width="18" height="18"><path d="M640 51.2l-.3 12.2c-28.1.8-45 15.8-55.8 40.3-25 57.8-156.4 429.3-164.3 452h-32.1c-16.3-49.2-79.4-214.8-103.8-275.1-28.1 71-83.3 221.2-100.1 275.1h-32.1C143.5 442.6 14.9 157.3 13.9 147.2c0-1.5-.5-5.2-.5-5.8H0L0 115.2h224v25.4H192c-16.3 0-22.9 16.3-14.4 33.6l117 265.2 44.2-115-30.1-67.8c-12.5-28.1-29.6-116.5-51.6-116.5h-32.1V115.2h224v25.4H449c-28.6 0-34.6 14.4-22.4 40.8l109.2 271.5 44.7-116.5c-14.4-35.6-28.6-71.5-28.6-107.4 0-58.7 40.3-88.8 87.4-88.8h.8z" /></svg>
         },
     ];
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert('Message envoyé !');
-        setModalOpen(false);
-        setForm({ name: '', email: '', message: '', consent: false });
+        
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(form),
+            });
+
+            if (response.ok) {
+                alert('Message envoyé avec succès !');
+                setModalOpen(false);
+                setForm({ name: '', email: '', message: '', consent: false });
+            } else {
+                const errorData = await response.json();
+                alert(`Erreur: ${errorData.error || 'Impossible d\'envoyer le message'}`);
+            }
+        } catch (error) {
+            console.error('Erreur:', error);
+            alert('Une erreur est survenue lors de l\'envoi du message.');
+        }
     };
 
     return (
         <main>
+            {/* NAVIGATION LATÉRALE (POINTS) */}
+            <nav className="side-nav">
+                <Link href="#hero" className="side-dot" aria-label="Haut de page" />
+                <Link href="#content" className="side-dot" aria-label="Section suivante" />
+            </nav>
+
             {/* HERO */}
-            <section className="hero" aria-label="Portrait de Sénamé Koffi Agbodjinou" />
+            <section id="hero" className="hero" aria-label="Portrait de Sénamé Koffi Agbodjinou" />
 
             {/* GRILLE + FOOTER */}
-            <div className="page-content">
+            <div id="content" className="page-content">
                 <nav className="menu-grid" aria-label="Navigation principale">
                     {navItems.map((item, i) => (
-                        <Link
-                            key={i}
-                            href={item.href}
-                            className="nav-item"
-                            target={item.external ? '_blank' : undefined}
-                            rel={item.external ? 'noopener noreferrer' : undefined}
-                        >
-                            <div
-                                className="circle"
-                                style={{ backgroundImage: `url(${item.img})` }}
-                                role="img"
-                                aria-label={item.label}
-                            />
-                            <span className="nav-label">{item.label}</span>
-                        </Link>
+                        item.isEmpty ? (
+                            <div key={i} className="nav-item empty">
+                                <div className="circle empty" />
+                            </div>
+                        ) : (
+                            <Link
+                                key={i}
+                                href={item.href}
+                                className={`nav-item${item.isYellow ? ' yellow-item' : ''}`}
+                                target={item.external ? '_blank' : undefined}
+                                rel={item.external ? 'noopener noreferrer' : undefined}
+                            >
+                                <div
+                                    className={`circle${item.isYellow ? ' yellow-circle' : ''}`}
+                                    style={item.isYellow ? {} : { backgroundImage: `url(${item.img})` }}
+                                    role="img"
+                                    aria-label={item.label}
+                                >
+                                    {item.textInside && <span className="circle-text">{item.textInside}</span>}
+                                </div>
+                                {!item.hideLabel && <span className="nav-label">{item.label}</span>}
+                            </Link>
+                        )
                     ))}
                 </nav>
 
