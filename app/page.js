@@ -205,25 +205,14 @@ export default function Home() {
                             className={`social-btn${s.yellow ? ' yellow' : ''}`}
                             aria-label={s.label}
                             title={s.label}
-                            style={s.yellow ? {
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                width: '48px',
-                                height: '48px',
-                                borderRadius: '50%',
-                                overflow: 'hidden',
-                                backgroundColor: '#f1e600',
-                            } : undefined}
                         >
                             {s.imgSrc ? (
                                 /* eslint-disable-next-line @next/next/no-img-element */
                                 <img
                                     src={s.imgSrc}
                                     alt={s.label}
-                                    width={16}
-                                    height={16}
-                                    style={{ display: 'block', objectFit: 'cover' }}
+                                    width={34}
+                                    height={34}
                                 />
                             ) : (
                                 s.svg
