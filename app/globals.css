@@ -43,6 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 /* ===== GRILLE 7 COLONNES — Identique original ===== */
@@ -103,8 +104,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin-top: 100px;
-    padding-bottom: 120px;
 }
 
 .social-btn {
@@ -143,6 +142,17 @@ body {
 .social-btn svg {
     fill: #000;
     display: block;
+}
+
+/* ===== SECTION SOCIAL ===== */
+.social-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ababab;
 }
 
 /* ===== BOUTON FLOTTANT — jaune, sans texte ===== */
@@ -297,6 +307,10 @@ body {
 .side-dot:hover {
     background-color: #e6e600;
     transform: scale(1.3);
+}
+
+.side-dot.active {
+    background-color: #000;
 }
 
 .circle.empty {

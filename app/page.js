@@ -1,11 +1,36 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
     const [form, setForm] = useState({ name: '', email: '', message: '', consent: false });
+    const [activeSection, setActiveSection] = useState('hero');
+
+    useEffect(() => {
+        const sections = ['hero', 'content', 'social'];
+        const observerOptions = {
+            root: null,
+            rootMargin: '-45% 0px -45% 0px',
+            threshold: 0,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        return () => observer.disconnect();
+    }, []);
 
     const WP_T = 'https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs';
 
@@ -33,7 +58,6 @@ export default function Home() {
         { label: 'COMMITMENT', img: '/images/menu/menu_commitment.png', href: '/commitment' },
         { label: 'INVEST', img: '/images/menu/menu_invest.png', href: '/invest' },
         { label: 'BOARD', img: '/images/menu/menu_board.png', href: '/board' },
-        { label: 'EDITIONS', href: 'https://editions.lafricaine.org/', external: true, isYellow: true, textInside: 'EDITIONS' },
     ];
 
     const OpenAISVG = (
@@ -130,15 +154,16 @@ export default function Home() {
         <main>
             {/* NAVIGATION LATÉRALE (POINTS) */}
             <nav className="side-nav">
-                <Link href="#hero" className="side-dot" aria-label="Haut de page" />
-                <Link href="#content" className="side-dot" aria-label="Section suivante" />
+                <Link href="#hero" className={`side-dot ${activeSection === 'hero' ? 'active' : ''}`} aria-label="Haut de page" />
+                <Link href="#content" className={`side-dot ${activeSection === 'content' ? 'active' : ''}`} aria-label="Menu" />
+                <Link href="#social" className={`side-dot ${activeSection === 'social' ? 'active' : ''}`} aria-label="Réseaux sociaux" />
             </nav>
 
             {/* HERO */}
             <section id="hero" className="hero" aria-label="Portrait de Sénamé Koffi Agbodjinou" />
 
-            {/* GRILLE + FOOTER */}
-            <div id="content" className="page-content">
+            {/* GRILLE D'ACCUEIL */}
+            <section id="content" className="page-content">
                 <nav className="menu-grid" aria-label="Navigation principale">
                     {navItems.map((item, i) => (
                         item.isEmpty ? (
@@ -166,8 +191,10 @@ export default function Home() {
                         )
                     ))}
                 </nav>
+            </section>
 
-                {/* ICÔNES SOCIALES */}
+            {/* ICÔNES SOCIALES — Troisième Section */}
+            <section id="social" className="social-section">
                 <footer className="footer-social" aria-label="Réseaux sociaux">
                     {socialLinks.map((s, i) => (
                         <a
@@ -188,7 +215,7 @@ export default function Home() {
                         </a>
                     ))}
                 </footer>
-            </div>
+            </section>
 
             {/* BOUTON FLOTTANT — jaune, sans texte */}
             <div
