@@ -91,7 +91,7 @@ export default function Home() {
         {
             label: 'LomePlus',
             href: 'https://play.google.com/store/apps/details?id=com.woelabo.lomeplus',
-            imgSrc: `${WP_T}/Plus-r1xe3ctmega7ghxmki3wlox0lb0lf32ukmgza9lsj0.png`,
+            imgSrc: '/images/social/lomeplus.png',
             yellow: true
         },
         {
@@ -205,10 +205,26 @@ export default function Home() {
                             className={`social-btn${s.yellow ? ' yellow' : ''}`}
                             aria-label={s.label}
                             title={s.label}
+                            style={s.yellow ? {
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                width: '48px',
+                                height: '48px',
+                                borderRadius: '50%',
+                                overflow: 'hidden',
+                                backgroundColor: '#f1e600',
+                            } : undefined}
                         >
                             {s.imgSrc ? (
                                 /* eslint-disable-next-line @next/next/no-img-element */
-                                <img src={s.imgSrc} alt={s.label} width={34} height={34} />
+                                <img
+                                    src={s.imgSrc}
+                                    alt={s.label}
+                                    width={28}
+                                    height={28}
+                                    style={{ display: 'block', objectFit: 'cover' }}
+                                />
                             ) : (
                                 s.svg
                             )}

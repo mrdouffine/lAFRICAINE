@@ -5,11 +5,18 @@ export async function POST(request) {
     try {
         const { name, email, message } = await request.json();
 
+        // Vérifier si les variables d'env sont configurées
+        if (!process.env.EMAIL_HOST || !process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+            console.warn('Variables d\'environnement email non configurées. Mode simulation.');
+            return NextResponse.json({ 
+                message: 'Message reçu (email non configuré en ce moment)' 
+            }, { status: 200 });
+        }
+
         // Configurer le transporteur (SMTP)
-        // Note: Vous devrez configurer ces variables dans .env.local
         const transporter = nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
-            port: process.env.EMAIL_PORT,
+            port: process.env.EMAIL_PORT || 587,
             secure: process.env.EMAIL_PORT === '465', // true pour 465, false pour les autres ports
             auth: {
                 user: process.env.EMAIL_USER,
