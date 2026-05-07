@@ -221,8 +221,8 @@ export default function Home() {
                                 <img
                                     src={s.imgSrc}
                                     alt={s.label}
-                                    width={28}
-                                    height={28}
+                                    width={16}
+                                    height={16}
                                     style={{ display: 'block', objectFit: 'cover' }}
                                 />
                             ) : (
