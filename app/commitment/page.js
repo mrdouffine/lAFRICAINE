@@ -2,31 +2,37 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLightbox } from '../../components/Lightbox';
 
 export default function Commitment() {
     const opencodeImages = [
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/1-8.jpg',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/2-8.jpg',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/3-7.jpg',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/4-6.jpg',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/5-8.jpg',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/6-3.jpg',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/7-4.jpg',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/8-5.jpg',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/9-2.jpg'
+        '/images/commitment/1-8.jpg',
+        '/images/commitment/2-8.jpg',
+        '/images/commitment/3-7.jpg',
+        '/images/commitment/4-6.jpg',
+        '/images/commitment/5-8.jpg',
+        '/images/commitment/6-3.jpg',
+        '/images/commitment/7-4.jpg',
+        '/images/commitment/8-5.jpg',
+        '/images/commitment/9-2.jpg'
     ];
 
     const girlbossImages = [
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/10.png',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/9.png',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/8-1.png',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/7-1.png',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/6-1.png',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/5-1.png',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/4.png',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/3-1.png',
-        'https://sename.lafricaine.org/wp-content/uploads/2021/11/2.png'
+        '/images/commitment/10.png',
+        '/images/commitment/9.png',
+        '/images/commitment/8-1.png',
+        '/images/commitment/7-1.png',
+        '/images/commitment/6-1.png',
+        '/images/commitment/5-1.png',
+        '/images/commitment/4.png',
+        '/images/commitment/3-1.png',
+        '/images/commitment/2.png'
     ];
+
+    const opencodeLarge = '/images/commitment/10-2.jpg';
+    const girlbossLarge = '/images/commitment/1-2.jpg';
+    const opencode = useLightbox([...opencodeImages, opencodeLarge]);
+    const girlboss = useLightbox([...girlbossImages, girlbossLarge]);
 
     return (
         <div className="page-container">
@@ -43,7 +49,7 @@ export default function Commitment() {
                 <div className="left-column">
                     <div className="photo-container">
                         <Image
-                            src="https://sename.lafricaine.org/wp-content/uploads/2021/11/12_Commitments.png"
+                            src="/images/commitment_portrait.png"
                             alt="COMMITMENTS"
                             width={800}
                             height={800}
@@ -99,7 +105,7 @@ export default function Commitment() {
                             <div className="images-grid-container">
                                 {opencodeImages.map((src, index) => (
                                     <div key={index} className="grid-item">
-                                        <a href={src} target="_blank" rel="noopener noreferrer">
+                                        <a href={src} onClick={opencode.open(index)}>
                                             <img src={src} className="grid-img" alt={`OpenCode ${index}`} />
                                         </a>
                                     </div>
@@ -107,8 +113,8 @@ export default function Commitment() {
                             </div>
 
                             <div className="large-image-wrapper">
-                                <a href="https://sename.lafricaine.org/wp-content/uploads/2021/11/10-2.jpg" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://sename.lafricaine.org/wp-content/uploads/2021/11/10-2.jpg" className="large-img" alt="OpenCode Large" />
+                                <a href="/images/commitment/10-2.jpg" onClick={opencode.open(opencodeImages.length)}>
+                                    <img src="/images/commitment/10-2.jpg" className="large-img" alt="OpenCode Large" />
                                 </a>
                             </div>
                         </div>
@@ -119,7 +125,7 @@ export default function Commitment() {
                             <div className="images-grid-container">
                                 {girlbossImages.map((src, index) => (
                                     <div key={index} className="grid-item">
-                                        <a href={src} target="_blank" rel="noopener noreferrer">
+                                        <a href={src} onClick={girlboss.open(index)}>
                                             <img src={src} className="grid-img" alt={`GirlBoss ${index}`} />
                                         </a>
                                     </div>
@@ -127,8 +133,8 @@ export default function Commitment() {
                             </div>
 
                             <div className="large-image-wrapper">
-                                <a href="https://sename.lafricaine.org/wp-content/uploads/2021/11/1-2.jpg" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://sename.lafricaine.org/wp-content/uploads/2021/11/1-2.jpg" className="large-img" alt="GirlBoss Large" />
+                                <a href="/images/commitment/1-2.jpg" onClick={girlboss.open(girlbossImages.length)}>
+                                    <img src="/images/commitment/1-2.jpg" className="large-img" alt="GirlBoss Large" />
                                 </a>
                             </div>
                         </div>
@@ -137,11 +143,14 @@ export default function Commitment() {
                 </div>
             </div>
 
+            {opencode.lightbox}
+            {girlboss.lightbox}
+
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

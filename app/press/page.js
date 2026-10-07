@@ -3,11 +3,82 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useLightbox } from '../../components/Lightbox';
 
 
 
 export default function Press() {
     const pressItems = [
+        {
+            org: "Forbes Afrique",
+            title: "Sénamé Koffi Agbodjinou, l’architecte qui bâtit les consciences",
+            url: "https://forbesafrique.com/sename-koffi-agbodjinou-larchitecte-qui-batit-les-consciences/"
+        },
+        {
+            org: "Forbes Afrique",
+            title: "Architecture : les bâtisseurs stars du continent",
+            url: "https://forbesafrique.com/architecture-les-batisseurs-stars-du-continent/"
+        },
+        {
+            org: "Le Point",
+            title: "« Une gouvernance sans limite, ni légale ni temporelle » : deux intellectuels togolais alertent",
+            url: "https://www.lepoint.fr/afrique/une-gouvernance-sans-limite-ni-legale-ni-temporelle-deux-intellectuels-togolais-alertent-25-06-2025-2592979_3826.php"
+        },
+        {
+            org: "Brennpunkt",
+            title: "Habiter la terre et faire monde en commun",
+            url: "https://www.brennpunkt.lu/article/habiter-la-terre-et-faire-monde-en-commun/"
+        },
+        {
+            org: "Brennpunkt",
+            title: "Regards croisés sur : la révolution digitale",
+            url: "https://www.brennpunkt.lu/article/regards-croises-sur-la-revolution-digitale/"
+        },
+        {
+            org: "L’Echo",
+            title: "Sénamé Koffi Agbodjinou : « L'architecture occidentale en Afrique n'est pas moderne »",
+            url: "https://www.lecho.be/culture/architecture/sename-koffi-agbodjinou-l-architecture-occidentale-en-afrique-n-est-pas-moderne/10538005.html"
+        },
+        {
+            org: "Jeune Afrique",
+            title: "Kéré, Koffi et Diabaté, Adjaye… Cinq architectes de l’Afrique de demain",
+            url: "https://www.jeuneafrique.com/1597328/culture/kere-koffi-et-diabate-adjaye-cinq-architectes-de-lafrique-de-demain/"
+        },
+        {
+            org: "Air Côte d'Ivoire – Le MAG #55",
+            title: "Sename Koffi A. relie la ville à la nature",
+            url: "https://trcp.fr/lemag55/"
+        },
+        {
+            org: "2050",
+            title: "Sénamé Koffi: Taking Control of Destiny to Impose a Pan-African Vision of the Smart City",
+            url: "https://2050.do/sename-koffi-taking-control-of-destiny-to-impose-a-pan-african-vision-of-the-smart-city/"
+        },
+        {
+            org: "Le Courrier de l’UNESCO – Entretien par Laetitia Kaci",
+            title: "Sénamé Koffi Agbodjinou : “Today's African city is the product of a rupture with nature”",
+            url: "https://courier.unesco.org/en/articles/sename-koffi-agbodjinou-todays-african-city-product-rupture-nature"
+        },
+        {
+            org: "Le Courrier de l’UNESCO",
+            title: "Construire demain : vers un habitat durable",
+            url: "https://unesdoc.unesco.org/ark:/48223/pf0000388425"
+        },
+        {
+            org: "AOC Media – Armelle Choplin",
+            title: "Repenser l’habitabilité planétaire depuis les villes africaines",
+            url: "https://aoc.media/analyse/2023/02/01/repenser-lhabitabilite-planetaire-depuis-les-villes-africaines/"
+        },
+        {
+            org: "Revista Código",
+            title: "4 arquitectos africanos : una nueva visión",
+            url: "https://revistacodigo.com/lista-4-arquitectos-africanos-una-nueva-vision/"
+        },
+        {
+            org: "Chroniques d’Architecture",
+            title: "L’architecture vernaculaire comme remède au capitalisme urbain",
+            url: "https://chroniques-architecture.com/architecture-vernaculaire-remede-au-capitalisme-urbain-sename-koffi-agbodjinou/"
+        },
         {
             org: "Mediapart",
             title: "Sénamé Koffi Agbodjinou : « Les villes africaines sont un terrain d’expérimentation pour les Gafam »",
@@ -199,35 +270,37 @@ export default function Press() {
     ];
 
     const galleryImages = [
-        "https://sename.lafricaine.org/wp-content/uploads/2022/11/mc_mag_single_1_5_80_80-724x1024-1-724x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2022/11/002_50-724x1024-1-724x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2022/11/A98A3B43-7303-4699-A110-498D3048CF56-724x1024-1-724x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2022/11/0F2BFD4F-0695-44FF-8D63-B421907D3ACE-724x1024-1-724x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/11-2.png",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/11-3.png",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/11-4-1000x698.png",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/11-5-1000x698.png",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/12/a-1-1000x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/12/a-1000x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/5-3-1000x800.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/5-4-1000x800.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/5-5-1000x800.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/8-2-1000x800.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/8-3-1000x800.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/8-4-1000x800.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/4-1000x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/4-1-1000x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/4-2-1000x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/4-3-1000x800.jpeg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/sename_117619518_783890852353608_7216961914847536695_n-1000x720.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/thinktanger_117357672_773635446774795_4107940254392304889_n-1000x720.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/1039_multi_3ukll_sename-koffi-agbodjinou-ce-que-sera-la-ville-demain-c-est-l-afrique-qui-en-deciderafvzkuv-H.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/19113792_1474607945929725_1257276769686169594_n.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2022/02/sename_ladneu-1.png",
-        "https://sename.lafricaine.org/wp-content/uploads/2022/02/Capture-de%CC%81cran-2022-02-20-a%CC%80-21.10.09-1.png",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/tumblr_njyekojvfg1u8b26vo4_640.jpg",
-        "https://sename.lafricaine.org/wp-content/uploads/2021/11/3-2.png"
+        "/images/press/mc_mag_single_1_5_80_80-724x1024-1-724x800.jpeg",
+        "/images/press/002_50-724x1024-1-724x800.jpeg",
+        "/images/press/A98A3B43-7303-4699-A110-498D3048CF56-724x1024-1-724x800.jpeg",
+        "/images/press/0F2BFD4F-0695-44FF-8D63-B421907D3ACE-724x1024-1-724x800.jpeg",
+        "/images/press/11-2.png",
+        "/images/press/11-3.png",
+        "/images/press/11-4-1000x698.png",
+        "/images/press/11-5-1000x698.png",
+        "/images/press/a-1-1000x800.jpeg",
+        "/images/press/a-1000x800.jpeg",
+        "/images/press/5-3-1000x800.jpg",
+        "/images/press/5-4-1000x800.jpg",
+        "/images/press/5-5-1000x800.jpg",
+        "/images/press/8-2-1000x800.jpg",
+        "/images/press/8-3-1000x800.jpg",
+        "/images/press/8-4-1000x800.jpg",
+        "/images/press/4-1000x800.jpeg",
+        "/images/press/4-1-1000x800.jpeg",
+        "/images/press/4-2-1000x800.jpeg",
+        "/images/press/4-3-1000x800.jpeg",
+        "/images/press/sename_117619518_783890852353608_7216961914847536695_n-1000x720.jpg",
+        "/images/press/thinktanger_117357672_773635446774795_4107940254392304889_n-1000x720.jpg",
+        "/images/press/1039_multi_3ukll_sename-koffi-agbodjinou-ce-que-sera-la-ville-demain-c-est-l-afrique-qui-en-deciderafvzkuv-H.jpg",
+        "/images/press/19113792_1474607945929725_1257276769686169594_n.jpg",
+        "/images/press/sename_ladneu-1.png",
+        "/images/press/Capture-ecran-2022-02-20-21.10.09-1.png",
+        "/images/press/tumblr_njyekojvfg1u8b26vo4_640.jpg",
+        "/images/press/3-2.png"
     ];
+
+    const { open, lightbox } = useLightbox(galleryImages);
 
     return (
         <div className="page-container">
@@ -294,7 +367,7 @@ export default function Press() {
                         <div className="images-grid-container">
                             {galleryImages.map((src, index) => (
                                 <div key={index} className="grid-item">
-                                    <a href={src} target="_blank" rel="noopener noreferrer">
+                                    <a href={src} onClick={open(index)}>
                                         <img src={src} alt={`Press gallery ${index}`} className="grid-img" />
                                     </a>
                                 </div>
@@ -304,11 +377,13 @@ export default function Press() {
                 </div>
             </div>
 
+            {lightbox}
+
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

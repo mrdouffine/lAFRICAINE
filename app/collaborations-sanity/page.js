@@ -90,7 +90,7 @@ export default function CollaborationsSanity() {
         body {
           margin: 0;
           padding: 0;
-          background-color: #ffffff;
+          background-color: #BEBEBE;
           font-family: Arial, Helvetica, sans-serif;
           color: #000;
         }

@@ -1,20 +1,21 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLightbox } from '../../components/Lightbox';
 
 export default function Tech() {
     const galleryImages = [
-        { id: 1, src: '/images/tech/0-1.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/0-1.png' },
-        { id: 2, src: '/images/tech/1-9-1000x720.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/1-9-1000x720.jpg' },
-        { id: 3, src: '/images/tech/2-9.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/2-9.jpg' },
-        { id: 4, src: '/images/tech/3-3.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/3-3.png' },
-        { id: 5, src: '/images/tech/4-7.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/4-7.jpg' },
-        { id: 6, src: '/images/tech/5-3-1000x764.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/5-3-1000x764.png' },
-        { id: 7, src: '/images/tech/6-3.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/6-3.png' },
-        { id: 8, src: '/images/tech/7-3.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/7-3.png' },
-        { id: 9, src: '/images/tech/8-4.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/8-4.png' },
-        { id: 10, src: '/images/tech/9-3-1000x720.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/9-3-1000x720.jpg' },
-        { id: 11, src: '/images/tech/10-3-1000x720.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/10-3-1000x720.jpg' },
+        { id: 1, src: '/images/tech/0-1.png' },
+        { id: 2, src: '/images/tech/1-9-1000x720.jpg' },
+        { id: 3, src: '/images/tech/2-9.jpg' },
+        { id: 4, src: '/images/tech/3-3.png' },
+        { id: 5, src: '/images/tech/4-7.jpg' },
+        { id: 6, src: '/images/tech/5-3-1000x764.png' },
+        { id: 7, src: '/images/tech/6-3.png' },
+        { id: 8, src: '/images/tech/7-3.png' },
+        { id: 9, src: '/images/tech/8-4.png' },
+        { id: 10, src: '/images/tech/9-3-1000x720.jpg' },
+        { id: 11, src: '/images/tech/10-3-1000x720.jpg' },
     ];
 
     const projects = [
@@ -44,6 +45,8 @@ export default function Tech() {
             description: 'Application mobile qui mappe et rend visible des figures, des lieux ou des événements des villes africaines. Elle recense et propose la découverte des acteurs influents et dynamiques des villes à travers leur biographie, leur activités, leurs actions et les liens vers leurs pages sur les réseaux sociaux, mais aussi fait un zoom sur leur évènement ou lieux qu\'ils ont créé. PLUS permet aussi de participer à des expositions, de visiter des galeries et tout autre centre culturel des villes qui sont mis sur l\'application.'
         }
     ];
+
+    const { open, lightbox } = useLightbox(galleryImages.map((img) => img.src));
 
     return (
         <div className="page-container">
@@ -120,9 +123,9 @@ export default function Tech() {
                         <p><strong>Awards :</strong> "Best Mission Concept" /NASA International Space Apps Challenge 2013, sacrée "Meilleure Innovation Africaine" au Africa Innovation Summit /Praia 2014, Global Fab Awards de la meilleure invention jamais sortie d'un FabLab /Barcelone 2014 et Prix de l'Observatoire NetExplo /Paris 2015.</p>
 
                         <div className="images-grid-container">
-                            {galleryImages.map((image) => (
+                            {galleryImages.map((image, index) => (
                                 <div key={image.id} className="grid-item">
-                                    <a href={image.link} target="_blank" rel="noopener noreferrer">
+                                    <a href={image.src} onClick={open(index)}>
                                         <img src={image.src} className="grid-img" alt={`Tech Gallery ${image.id}`} />
                                     </a>
                                 </div>
@@ -132,11 +135,13 @@ export default function Tech() {
                 </div>
             </div>
 
+            {lightbox}
+
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

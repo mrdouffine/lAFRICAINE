@@ -2,22 +2,46 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLightbox } from '../../components/Lightbox';
 
 
 export default function Academic() {
     const gridImages = [
-        { id: 1, src: '/images/academic/1-11-1000x721.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/1-11-1000x721.jpg' },
-        { id: 2, src: '/images/academic/2-11-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/2-11-1000x800.jpg' },
-        { id: 3, src: '/images/academic/3-10.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/3-10.jpg' },
-        { id: 4, src: '/images/academic/4-9-1000x573.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/4-9-1000x573.jpg' },
-        { id: 5, src: '/images/academic/5-10.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/5-10.jpg' },
-        { id: 6, src: '/images/academic/6_Academic-1-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/6_Academic-1-1-1000x800.jpg' },
+        { id: 1, src: '/images/academic/1-11-1000x721.jpg' },
+        { id: 2, src: '/images/academic/2-11-1000x800.jpg' },
+        { id: 3, src: '/images/academic/3-10.jpg' },
+        { id: 4, src: '/images/academic/4-9-1000x573.jpg' },
+        { id: 5, src: '/images/academic/5-10.jpg' },
+        { id: 6, src: '/images/academic/6_Academic-1-1-1000x800.jpg' },
     ];
 
     const sections = [
         {
             title: "COLLOQUES",
             items: [
+                {
+                    heading: <a href="https://reembodieddata.xyz/" target="_blank" rel="noopener noreferrer" className="highlight-link">Re/Embodied Data. Ambiguities of Knowing</a>,
+                    content: "Symposium – Dialogue 2 : More-than-Human Technoecologies\nAvec Michelle Christensen, Florian Conradi, Anani Dodji Sanouvi\nEinstein Center Digital Future @ Berlin Open Lab (UdK + TU Berlin)",
+                    meta: "Berlin, Juin 2024"
+                },
+                {
+                    heading: <a href="https://artlaboratory-berlin.org/events/hackers-makers-thinkers-conference/" target="_blank" rel="noopener noreferrer" className="highlight-link">Hackers, Makers Thinkers !</a>,
+                    content: <>
+                        Collective Experiments in Social Fermenting/ International Conference<br />
+                        Panel Symbiotic Elements<br />
+                        Art Laboratory Berlin in collaboration with the Weizenbaum Institute (UdK Berlin) and The Einstein Center Digital Future (TU Berlin)
+                    </>,
+                    meta: "(hybrid | on-site and livestream), May, 2022"
+                },
+                {
+                    heading: "Afrikan Ecological Architecture Symposium",
+                    content: <>
+                        Role of Digital Design and Fabrication in the Future of the Continent<br />
+                        Conversations with Today's Design and Build Visionaries<br />
+                        IAAC (Spain) in collaboration with the African Design Centre (Kigali- Rwanda)
+                    </>,
+                    meta: "(online), May, 2022"
+                },
                 {
                     heading: "Les États Généraux de L’Eco",
                     content: "Colloque International du Franc CFA à l’Éco : Quelle monnaie pour quel développement en Afrique de l’Ouest ? (Panel de Clôture)",
@@ -52,6 +76,16 @@ export default function Academic() {
         {
             title: "INVITATIONS COURS, SÉMINAIRES",
             items: [
+                {
+                    heading: <a href="https://paris-malaquais.archi.fr/evenements/events/cycle-dautres-reliefs-architecture-neo-vernaculaire-et-technosciences-conference-de-sename-koffi-agbodjinou/" target="_blank" rel="noopener noreferrer" className="highlight-link">« Architecture néo-vernaculaire et technosciences »</a>,
+                    content: "Cycle D’autres reliefs – Conférence\nÉcole nationale supérieure d’architecture Paris-Malaquais",
+                    meta: "Paris, Juin 2023"
+                },
+                {
+                    heading: "Block Seminar : Design + Crisis – Pluriversal pathways to a post-Anthropocene",
+                    content: "Lecturers : Prof. Dr. Michelle Christensen / Prof. Dr. Florian Conradi / Sénamé Koffi Agbodjinou (WoeLabs Lomé / L'Africaine d'architecture)\nBerlin Open Lab, Einsteinufer 43, Berlin",
+                    meta: "Berlin, Février – Mars 2023"
+                },
                 {
                     heading: "“How can Chinese Eco Architecture and Togolese Innovative Communities inform each other?”",
                     content: "Raefer Wallis in conversation with Sénamé Koffi Agbodjinou\nUniversity of Hong Kong\nIn the HKU Common Core taught by Cesar Jung-Harada called: « Our Response to Climate Change: Hong Kong 2100 », Course Code: CCGL9065",
@@ -131,6 +165,8 @@ export default function Academic() {
 
 
 
+    const { open, lightbox } = useLightbox(gridImages.map((img) => img.src));
+
     return (
         <div className="page-container">
             <div className="nav-icons">
@@ -192,9 +228,9 @@ export default function Academic() {
 
 
                         <div className="images-grid-container">
-                            {gridImages.map((image) => (
+                            {gridImages.map((image, index) => (
                                 <div key={image.id} className="grid-item">
-                                    <a href={image.link} target="_blank" rel="noopener noreferrer">
+                                    <a href={image.src} onClick={open(index)}>
                                         <img src={image.src} className="grid-img" alt={`Gallery ${image.id}`} />
                                     </a>
                                 </div>
@@ -210,15 +246,17 @@ export default function Academic() {
                 .section-title { font-size: 14px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #000; padding-bottom: 5px; display: inline-block; }
                 .academic-item { margin-bottom: 30px; }
                 .item-heading { font-size: 13px; font-weight: bold; margin: 0 0 5px 0; }
-                .item-content { font-size: 12px; margin: 0 0 5px 0; font-style: italic; }
+                .item-content { font-size: 12px; margin: 0 0 5px 0; font-style: italic; white-space: pre-line; }
                 .item-meta { font-size: 11px; color: #555; margin: 0; line-height: 1.4; }
                 .highlight-link:hover { color: #bfbf00; text-decoration: underline; }
             `}</style>
+            {lightbox}
+
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

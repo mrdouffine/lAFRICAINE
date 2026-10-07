@@ -32,7 +32,6 @@ export default function Home() {
         return () => observer.disconnect();
     }, []);
 
-    const WP_T = 'https://sename.lafricaine.org/wp-content/uploads/elementor/thumbs';
 
     const navItems = [
         { label: 'CONTACT', img: '/images/menu/menu_contact.png', href: '/contact' },

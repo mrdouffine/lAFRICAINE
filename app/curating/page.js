@@ -3,33 +3,34 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useLightbox } from '../../components/Lightbox';
 
 
 export default function Curating() {
     const galleryImages = [
-        { id: 1, src: '/images/curating/1-10-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/1-10-1000x800.jpg' },
-        { id: 2, src: '/images/curating/2-1-2-1080x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/2-1-2-1080x800.jpg' },
-        { id: 3, src: '/images/curating/2-10.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/2-10.jpg' },
-        { id: 4, src: '/images/curating/3-8-1400x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/3-8-1400x800.jpg' },
-        { id: 5, src: '/images/curating/4-8-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/4-8-1000x800.jpg' },
-        { id: 6, src: '/images/curating/5-9-1080x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/5-9-1080x800.jpg' },
-        { id: 7, src: '/images/curating/6-4-1200x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/6-4-1200x800.jpg' },
-        { id: 8, src: '/images/curating/7-1-3-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/7-1-3-1000x800.jpg' },
-        { id: 9, src: '/images/curating/signal-2022-02-08-101947_002-1-1400x800.jpeg', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/02/signal-2022-02-08-101947_002-1-1400x800.jpeg' },
-        { id: 10, src: '/images/curating/8-5-1000x483.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/8-5-1000x483.png' },
-        { id: 11, src: '/images/curating/9-5.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/9-5.png' },
-        { id: 12, src: '/images/curating/10-4.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/10-4.png' },
-        { id: 13, src: '/images/curating/11-7-1000x800.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/11-7-1000x800.png' },
-        { id: 14, src: '/images/curating/12-3.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/12-3.png' },
-        { id: 15, src: '/images/curating/13-2.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/13-2.png' },
-        { id: 16, src: '/images/curating/14-2-1400x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/14-2-1400x800.jpg' },
-        { id: 17, src: '/images/curating/Capture-decran-2020-07-21-a-13.32.11-1.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/Capture-de%CC%81cran-2020-07-21-a%CC%80-13.32.11-1.png' },
-        { id: 18, src: '/images/curating/Capture-decran-2021-02-09-a-11.42.42-1.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/Capture-de%CC%81cran-2021-02-09-a%CC%80-11.42.42-1.png' },
-        { id: 19, src: '/images/curating/Capture-decran-2021-02-09-a-11.45.54-1.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/Capture-de%CC%81cran-2021-02-09-a%CC%80-11.45.54-1.png' },
-        { id: 20, src: '/images/curating/Capture-decran-2021-02-09-a-11.48.36-1.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/Capture-de%CC%81cran-2021-02-09-a%CC%80-11.48.36-1.png' },
-        { id: 21, src: '/images/curating/Capture-decran-2021-02-09-a-11.49.52-1.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/Capture-de%CC%81cran-2021-02-09-a%CC%80-11.49.52-1.png' },
-        { id: 22, src: '/images/curating/IMG_3038-1-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/IMG_3038-1-1000x800.jpg' },
-        { id: 23, src: '/images/curating/poster_Communalis-1.png', link: 'https://sename.lafricaine.org/wp-content/uploads/2022/02/poster_Communalis-1.png' },
+        { id: 1, src: '/images/curating/1-10-1000x800.jpg' },
+        { id: 2, src: '/images/curating/2-1-2-1080x800.jpg' },
+        { id: 3, src: '/images/curating/2-10.jpg' },
+        { id: 4, src: '/images/curating/3-8-1400x800.jpg' },
+        { id: 5, src: '/images/curating/4-8-1000x800.jpg' },
+        { id: 6, src: '/images/curating/5-9-1080x800.jpg' },
+        { id: 7, src: '/images/curating/6-4-1200x800.jpg' },
+        { id: 8, src: '/images/curating/7-1-3-1000x800.jpg' },
+        { id: 9, src: '/images/curating/signal-2022-02-08-101947_002-1-1400x800.jpeg' },
+        { id: 10, src: '/images/curating/8-5-1000x483.png' },
+        { id: 11, src: '/images/curating/9-5.png' },
+        { id: 12, src: '/images/curating/10-4.png' },
+        { id: 13, src: '/images/curating/11-7-1000x800.png' },
+        { id: 14, src: '/images/curating/12-3.png' },
+        { id: 15, src: '/images/curating/13-2.png' },
+        { id: 16, src: '/images/curating/14-2-1400x800.jpg' },
+        { id: 17, src: '/images/curating/Capture-decran-2020-07-21-a-13.32.11-1.png' },
+        { id: 18, src: '/images/curating/Capture-decran-2021-02-09-a-11.42.42-1.png' },
+        { id: 19, src: '/images/curating/Capture-decran-2021-02-09-a-11.45.54-1.png' },
+        { id: 20, src: '/images/curating/Capture-decran-2021-02-09-a-11.48.36-1.png' },
+        { id: 21, src: '/images/curating/Capture-decran-2021-02-09-a-11.49.52-1.png' },
+        { id: 22, src: '/images/curating/IMG_3038-1-1000x800.jpg' },
+        { id: 23, src: '/images/curating/poster_Communalis-1.png' },
     ];
 
     const sections = [
@@ -98,6 +99,8 @@ export default function Curating() {
         }
     ];
 
+    const { open, lightbox } = useLightbox(galleryImages.map((img) => img.src));
+
     return (
         <div className="page-container">
             <div className="nav-icons">
@@ -153,9 +156,9 @@ export default function Curating() {
                         ))}
 
                         <div className="images-grid-container">
-                            {galleryImages.map((image) => (
+                            {galleryImages.map((image, index) => (
                                 <div key={image.id} className="grid-item">
-                                    <a href={image.link} target="_blank" rel="noopener noreferrer">
+                                    <a href={image.src} onClick={open(index)}>
                                         <img src={image.src} className="grid-img" alt={`Gallery ${image.id}`} />
                                     </a>
                                 </div>
@@ -166,11 +169,13 @@ export default function Curating() {
                 </div>
             </div>
 
+            {lightbox}
+
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

@@ -1,12 +1,40 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLightbox } from '../../components/Lightbox';
 
 export default function Publication() {
     const collectives = [
         {
+            title: "Re/Embodied Data. Ambiguities of Knowing",
+            link: "https://thoth.pub/books/c511f2fb-55d4-4685-b5b9-08df3b92166a",
+            lines: [
+                "Dir. Michelle Christensen, Florian Conradi, Cornelia Sollfrank, Felix Stalder",
+                "Contribution de Sénamé Koffi Agbodjinou",
+                "Adocs, Hambourg, 2026"
+            ]
+        },
+        {
+            title: "Gbegbetopia—Maison Gbegbe",
+            link: "https://www.archivebooks.org/gbegbetopia/",
+            lines: [
+                "An Art-Based Community and Spiritual Center",
+                "Avec L’Africaine d’architecture, l’Union des Cultes Traditionnels du Togo (UCTT) d’Agouegan et art&dialogue e.V.",
+                "Archive Books, 2025 (ISBN 978-3-949973-63-5)"
+            ]
+        },
+        {
+            title: "Material Trajectories – Designing with Care?",
+            link: "https://meson.press/books/material-trajectories/",
+            lines: [
+                "In reassessing the status quo of design and architecture as material practices, Material Trajectories: Designing With Care? provides outlines for a nuanced reading of their worldmaking processes.",
+                "meson press"
+            ]
+        },
+        {
             title: "Human Scale Remeasured",
             lines: [
+                "> Principes d’une Cosmoarchitecture",
                 "Catalogue of the Exhibition at AEDES Architecture Forum, 16 January – 20 May 2021",
                 "AEDES, 2021"
             ]
@@ -30,6 +58,13 @@ export default function Publication() {
 
     const magazine = [
         {
+            title: "L’Architecture d’Aujourd’hui n°455 « Afriques »",
+            lines: [
+                "Contribution au numéro « Que fait l’Afrique à l’architecture aujourd’hui ? »",
+                "Juin 2023"
+            ]
+        },
+        {
             title: "“ Eight principles of Spatial Organisation ”",
             lines: [
                 "Arts of the Working Class",
@@ -38,10 +73,31 @@ export default function Publication() {
             ]
         },
         {
+            title: "Penser les nouvelles façons d'habiter la ville",
+            link: "https://mag.jmafrique.org/post/penser-les-nouvelles-fa%C3%A7ons-d-habiter-la-ville",
+            lines: [
+                "JM Afrique Mag"
+            ]
+        },
+        {
+            title: "Vernacularise the Smart Cities !",
+            link: "https://aston-network.medium.com/vernacularisation-of-smart-cities-48490cf84b78",
+            lines: [
+                "ASToN Network"
+            ]
+        },
+        {
+            title: "Principes d’une Cosmoarchitecture",
+            link: "https://lfgab.com/principes-dune-cosmoarchitecture/",
+            lines: [
+                "Learning from Green African Building"
+            ]
+        },
+        {
             title: "“ Las lecciones del Pangolín ”",
             link: "https://www.afribuku.com/pangolin-covid19-simbologia-africa-mitos/",
             lines: [
-                "AFRIKUBU -Cultura Africana Contemporanea"
+                "AFRIBUKU -Cultura Africana Contemporanea"
             ]
         }
     ];
@@ -49,6 +105,8 @@ export default function Publication() {
     const galleryImages = [
         "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.png", "10.jpeg", "11.jpeg", "12.jpeg", "13.jpeg", "14.jpg", "15.jpg"
     ];
+
+    const { open, lightbox } = useLightbox(galleryImages.map((f) => `/images/publication/${f}`));
 
     return (
         <div className="page-container">
@@ -96,7 +154,13 @@ export default function Publication() {
                             <h3 className="section-title">COLLECTIFS – CATALOGUES</h3>
                             {collectives.map((item, index) => (
                                 <div key={index} className="item">
-                                    <div className="item-title">{item.title}</div>
+                                    {item.link ? (
+                                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-title-link">
+                                            {item.title}
+                                        </a>
+                                    ) : (
+                                        <div className="item-title">{item.title}</div>
+                                    )}
                                     {item.lines.map((line, idx) => (
                                         <div key={idx} className="item-line">{line}</div>
                                     ))}
@@ -125,7 +189,7 @@ export default function Publication() {
                         <div className="images-grid-container">
                             {galleryImages.map((filename, index) => (
                                 <div key={index} className="grid-item">
-                                    <a href={`/images/publication/${filename}`} target="_blank" rel="noopener noreferrer">
+                                    <a href={`/images/publication/${filename}`} onClick={open(index)}>
                                         <img
                                             src={`/images/publication/${filename}`}
                                             className="grid-img"
@@ -140,11 +204,13 @@ export default function Publication() {
                 </div>
             </div>
 
+            {lightbox}
+
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
                     color: #000;
                 }

@@ -46,25 +46,41 @@ export default function Biography() {
 
           <div className="content-wrapper">
             <div className="long-bio-text">
-              <p>Sename Koffi Agbodjinou est promoteur de la pensée néovernaculaire qu’il décline concrètement en tant que designer, architecte, entrepreneur aux différentes échelles du produit, du bâtiment et de la ville. Il est le créateur de L’Africaine d’architecture, une plateforme d’expérimentations sur les questions de l’architecture et de la ville africaines et des WoeLabs : réseau de tech-hubs togolais dont l’ambition est de “rendre tout le monde égal en face de la technologie” ! Avec sa communauté, il contribue à prototyper un collectivisme digital qui a permis de lancer la demi-douzaine de startups du Groupe HubCity. Sa vision prospective éclaire plusieurs conférences, institutions et grands groupes.</p>
+              <p>Architecte, anthropologue, activiste technologique et entrepreneur social, le togolais Sénamé Koffi Agbodjinou est l'une des figures de proue de la pensée contemporaine africaine. Désigné en 2026 par <strong>Forbes</strong> comme l’une des <strong>« Grandes Figures de l’Architecture Africaine Contemporaine »</strong>, il a bâti une œuvre qui transcende la simple édification de murs pour façonner une vision du monde enracinée, souveraine et résolument tournée vers le futur. Il définit ainsi une  trajectoire unique à l'intersection des structures spatiales et des dynamiques sociales, se fixant pour mission de « bâtir les consciences » autant que les bâtiments.</p>
 
-              <p>Né en 1980 à Lomé, Sename Koffi Agbodjinou est principalement architecte et anthropologue de formation (ENSAPLV, EHESS -Paris). Il crée en 2010 la plateforme L’Africaine d’architecture sur la ligne “Modernité ancrée », avec l’objectif de fournir les moyens conceptuels d’une alternative architecturale valorisant les canons, dynamiques et ressources du cru.</p>
+              <h3 className="bio-subtitle">Un Parcours à la Croisée des Savoirs</h3>
 
-              <p>Il devient défenseur d’un vernaculaire numérique, en 2012, quand il croit identifier une correspondance entre l’éthique hacker et celles les sociétés de tradition. Le concept #LowHighTech voit le jour pour souligner cette proximité et envisager une approche originale des questions d’innovation impliquant les couches les plus modestes.</p>
+              <p>Formé à l’École Spéciale d’Architecture (ESA), à l’ENSA-Paris La Villette et à l’École des Hautes Études en Sciences Sociales (EHESS), Sénamé Koffi Agbodjinou refuse très tôt le clivage entre tradition et modernité. Sa double compétence lui permet d’aborder le projet architectural comme un organisme vivant : il ne dessine pas de structures bâties sans en avoir préalablement décrypté les structures sociales et les cosmologies locales.</p>
 
-              <p>L’utopie urbaine HubCités Africaines, les Espaces de Démocratie Technologique WoeLab et la “first made in Africa” imprimante 3D Wafate sont les meilleurs ambassadeurs de cette vision de société pionnière dans la critique de la Smart City.</p>
+              <p>Son expérience opérationnelle s’est forgée sur le terrain de la construction humanitaire et bioclimatique. Ancien chef de projet pour l’Association de la Voûte Nubienne au Burkina Faso et collaborateur du maître italien Fabrizio Carola, il a acquis une maîtrise rare des matériaux de proximité (terre crue, pierre) et des techniques à faible empreinte carbone. En 2006, il signe l’École Tammari au Nord-Togo (site UNESCO), un complexe scolaire manifeste réalisé en terre crue avec les communautés locales, prouvant que l’on peut bâtir du commun à partir du vernaculaire.</p>
 
-              <p>Sénamé dirige les WoeLab, lieux atypiques, entièrement autofinancés, qui rendent possibles la mutualisation des intelligences et le brassage de populations diverses adoptant des usages à faible empreinte environnementale. Il y incube une communauté de jeunes pensionnaires, co-sociétaires de la demi- douzaine de startups du groupe HubCity.</p>
+              <h3 className="bio-subtitle">Père du Néovernaculaire et de la Smart City Organique : pour une Modernité Ancrée</h3>
 
-              <p>En qualité de curateur et de scénographe, il a conçu diverses installations et exposé au ZKM ou encore au siège du Parlement Européen. Il a doublement été sollicité en 2020 pour présenter dans l’exposition centrale et collaborer au pavillon allemand de la Biennale d’Architecture de Venise.</p>
+              <p>Fondateur de la plateforme <strong>L’Africaine d’Architecture (LAA)</strong>, il théorise l’approche « <strong>néovernaculaire</strong> » : une architecture qui ne se contente pas d’imiter le passé, mais qui utilise les savoirs ancestraux comme matrices actives pour informer la contemporaneité et la haute technologie. Il puise ainsi dans les savoirs endogènes pour répondre aux périls écologiques et technologiques de notre temps.</p>
 
-              <p>Sénamé est régulièrement keynote speaker dans de grandes conférences comme SXSW- Austin, Republica- Berlin, WORLD FORUM FOR A RESPONSIBLE ECONOMY- Lille, UNESCO/Netexplo -Paris, World maker faire – NYC, etc.</p>
+              <p>Cette vision se concrétise en un <strong>néovernaculaire numérique</strong> en 2012 avec la création des <strong>WoeLab(s)</strong>, le premier réseau de <em>tech hub</em> de quartier à Lomé, où sa communauté a mis au point la première imprimante 3D conçue à partir de déchets électroniques.</p>
 
-              <p>Son intérêt embrasse des champs aussi divers que le design et l’architecture durables, la transformation digitale intégrée, l’économie collaborative, le mouvement maker, etc.</p>
+              <p>À travers son concept de <strong>HubCity</strong>, Sénamé Koffi Agbodjinou propose une alternative radicale à la <em>Smart City</em> occidentale. Pour lui, la ville intelligente africaine doit être « distribuée, récursive et organique », s’appuyant sur un collectivisme digital inspiré des structures sociales traditionnelles. Son travail sur l’impression 3D terre et les micro-architectures a été sélectionné pour l’exposition centrale de la 17e Biennale d’Architecture de Venise en 2020.</p>
 
-              <p>Il a été élu en 2017 au prestigieux programme pour entrepreneurs sociaux de la Fondation Ashoka.</p>
+              <h3 className="bio-subtitle">Un Expert Stratégique Global</h3>
 
-              <p>Sename Koffi Agbodjinou est candidat aux élections présidentielles du Togo en 2025 avec un programme dit d’abolition de la fonction présidentielle.</p>
+              <p>Reconnu pour sa capacité à naviguer entre les imaginaires radicaux et les réalités institutionnelles, il conseille les plus grands groupes (Bouygues, VINCI, Veolia) et les institutions internationales (AFD, UNESCO, OCDE). Son influence s’exerce également au sein de conseils d’administration et de cénacles prospectifs tels que le <strong>Fonds 2050</strong>, le <strong>Value AI Institute</strong> à Londres, ou le <strong>Musée des Civilisations Noires</strong> à Dakar.</p>
+
+              <p>Son expertise est aujourd'hui sollicitée pour des projets d’envergure qui redéfinissent l'habitabilité du continent : galeries d’art au Bénin (Ouid’art), lycées bioclimatiques au Ghana, ou centres numériques en milieu rural.</p>
+
+              <h3 className="bio-subtitle">Un Stratège de l’Habitation et de l’Impact Global</h3>
+
+              <p>Au-delà de la conception, Sénamé Koffi Agbodjinou est un acteur influent de la gouvernance de projet. Steward au sein du <strong>Fonds 2050</strong> aux côtés de Marie Ekeland, membre de nombreux conseils scientifiques et jurys internationaux, il conseille les décideurs sur les risques systémiques (écologiques et sociaux) et sur la « Géopolitique de l’Habitation ».</p>
+
+              <p>Il intervient aujourd’hui sur des chantiers d’envergure en Afrique de l’Ouest (Sénégal, Bénin, Ghana, Guinée), où il déploie une architecture de la « liane et du lien », visant à minimiser l’impact environnemental tout en maximisant l’inclusion sociale et l’accessibilité. Pour lui, l’architecte doit être un « ménageur » du territoire, capable de réconcilier la technè numérique avec l’archaïsme nourricier.</p>
+
+              <h3 className="bio-subtitle">Une Éthique du « Ménagement »</h3>
+
+              <p>Lauréat de multiples distinctions — du <strong>NASA Space Apps Challenge</strong> au <strong>Grand Prix NetExplo de l'UNESCO</strong> — Sénamé Koffi Agbodjinou ne mesure pas la réussite en mètres carrés, mais en « consciences déplacées ». Fellow de la Fondation BMW et d'Ashoka, il défend une <strong>« Géopolitique de l’Habitation »</strong> où l’Afrique ne se contente plus d’attendre ses plans, mais dessine ses propres futurs.</p>
+
+              <p>En mai 2026, alors que le continent fait face à des défis démographiques et climatiques sans précédent, Sénamé Koffi Agbodjinou continue de tracer une voie singulière : celle d'une architecture qui « ménage la liane, le lien et la ligature », faisant de la brique et du code les leviers d'une redistribution symbolique, économique et politique.</p>
+
+              <p><em>« Il n’est plus temps de savoir où on va, il faut se lever et marcher. »</em> — Inspiré par Aimé Césaire, Sénamé Koffi Agbodjinou active des processus fertiles pour que la cité africaine de demain soit le miroir de son propre génie.</p>
 
               <br />
               <br />
@@ -87,7 +103,7 @@ export default function Biography() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }
@@ -191,6 +207,8 @@ export default function Biography() {
                     padding-left: 0;
                     max-width: 600px;
                 }
+
+                .bio-subtitle { font-size: 13px; font-weight: bold; margin: 25px 0 10px 0; letter-spacing: 0.03em; }
 
                 .long-bio-text {
                     font-size: 11px;

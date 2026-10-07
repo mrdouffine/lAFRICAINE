@@ -3,19 +3,32 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useLightbox } from '../../components/Lightbox';
 
 
 export default function Consulting() {
     const gridImages = [
-        { id: 1, src: '/images/consulting/1-12-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/1-12-1000x800.jpg' },
-        { id: 2, src: '/images/consulting/2-12-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/2-12-1000x800.jpg' },
-        { id: 3, src: '/images/consulting/3-11-1000x800.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/3-11-1000x800.jpg' },
-        { id: 4, src: '/images/consulting/20190306_112009-1-1000x573.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/20190306_112009-1-1000x573.jpg' },
-        { id: 5, src: '/images/consulting/sename_98504881_124339892606361_4529801261739714539_n-1-1000x719.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/sename_98504881_124339892606361_4529801261739714539_n-1-1000x719.jpg' },
-        { id: 6, src: '/images/consulting/sename_101036021_609826619619545_6909935395864197571_n-1-1000x720.jpg', link: 'https://sename.lafricaine.org/wp-content/uploads/2021/11/sename_101036021_609826619619545_6909935395864197571_n-1-1000x720.jpg' },
+        { id: 1, src: '/images/consulting/1-12-1000x800.jpg' },
+        { id: 2, src: '/images/consulting/2-12-1000x800.jpg' },
+        { id: 3, src: '/images/consulting/3-11-1000x800.jpg' },
+        { id: 4, src: '/images/consulting/20190306_112009-1-1000x573.jpg' },
+        { id: 5, src: '/images/consulting/sename_98504881_124339892606361_4529801261739714539_n-1-1000x719.jpg' },
+        { id: 6, src: '/images/consulting/sename_101036021_609826619619545_6909935395864197571_n-1-1000x720.jpg' },
     ];
 
     const consultingData = [
+        {
+            org: "FNAU : Fédération Nationale des Agences d’Urbanisme",
+            detail: "Webinaire 1 « Regards croisés » : L’accès physique au numérique et aux services essentiels",
+            contribution: "Projet « Clés en main » sur le numérique inclusif et responsable, soutenu par la DAECT (Ministère de l’Europe et des Affaires Étrangères)",
+            meta: "Online, Février 2024"
+        },
+        {
+            org: "YUNUS Sports Hub",
+            detail: "Mentor : Mentorship Program « Sport related incubation »",
+            contribution: "AFD/ Lancement Paris 2024",
+            meta: "Février – Novembre 2022"
+        },
         {
             org: "Partenariat français pour les villes et les territoires (PFVT)",
             detail: "Cycle de webinaires « Regards croisés entre l’Afrique et la France »",
@@ -98,6 +111,8 @@ export default function Consulting() {
 
 
 
+    const { open, lightbox } = useLightbox(gridImages.map((img) => img.src));
+
     return (
         <div className="page-container">
             <div className="nav-icons">
@@ -150,9 +165,9 @@ export default function Consulting() {
                             ))}
                         </div>
                         <div className="images-grid-container">
-                            {gridImages.map((image) => (
+                            {gridImages.map((image, index) => (
                                 <div key={image.id} className="grid-item">
-                                    <a href={image.link} target="_blank" rel="noopener noreferrer">
+                                    <a href={image.src} onClick={open(index)}>
                                         <img src={image.src} className="grid-img" alt={`Gallery ${image.id}`} />
                                     </a>
                                 </div>
@@ -163,11 +178,13 @@ export default function Consulting() {
                 </div>
             </div>
 
+            {lightbox}
+
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

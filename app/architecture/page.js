@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLightbox } from '../../components/Lightbox';
 
 export default function Architecture() {
     const projects = [
@@ -53,6 +54,24 @@ export default function Architecture() {
         }
     ];
 
+    const experiences = [
+        {
+            year: "2010",
+            title: "International Urban Workshop ‘Sustainable development of lagoon banks of Porto-Novo’ – Bénin",
+            text: "A founding project for an African eco-capital of the 21st century. The Workshops for urban project management of Cergy Pontoise."
+        },
+        {
+            year: "2009",
+            title: "Vaults and coupoles training : an antique technology for a new architecture – Italie",
+            text: "Fabrizio Caròla / N:EA EuropaAfrica"
+        },
+        {
+            year: "2008",
+            title: "Head of mission – Project ‘ZA & PEP’ – Burkina Faso",
+            text: "Artisanal Zones Business Nurseries: Support for Local Communities of Tenkodogo, Banfora, Koudougou. Association de la Voûte Nubienne / Client : Service de Coopération et d'Action Culturelle de l'Ambassade de France au Burkina Faso."
+        }
+    ];
+
     const galleryImages = [
         "1-7-1000x720.jpg", "2-1.png", "3-6.jpg", "4-2-1000x767.png", "5-7.jpg", "6-2.png", "7-2.png", "8-3.png", "9-4.png", "10-3.png",
         "11-6.png", "12-2.png", "20-04-06_1119.jpg", "20-04-06_1121.jpg", "27-28-1000x585.png", "2728.png", "Agoe-1000x667.jpg", "Agoe0-1000x651.jpg",
@@ -89,6 +108,8 @@ export default function Architecture() {
         "271190649_3151752651769622_6487387870295987645_n-1000x800.jpg",
         "271189643_3151752855102935_5764423264373502719_n-1000x800.jpg"
     ];
+
+    const { open, lightbox } = useLightbox(galleryImages.map((f) => `/images/architecture/${f}`));
 
     return (
         <div className="page-container">
@@ -159,10 +180,20 @@ export default function Architecture() {
                             ))}
                         </div>
 
+                        <div className="experiences-list">
+                            <div className="experiences-title">EXPÉRIENCES / CHEF DE PROJET / WORKSHOPS</div>
+                            {experiences.map((exp, index) => (
+                                <div key={index} className="project-group">
+                                    <div className="project-title-text">{exp.year} — {exp.title}</div>
+                                    <p className="experience-text">{exp.text}</p>
+                                </div>
+                            ))}
+                        </div>
+
                         <div className="images-grid-container">
                             {galleryImages.map((filename, index) => (
                                 <div key={index} className="grid-item">
-                                    <a href={`/images/architecture/${filename}`} target="_blank" rel="noopener noreferrer">
+                                    <a href={`/images/architecture/${filename}`} onClick={open(index)}>
                                         <img
                                             src={`/images/architecture/${filename}`}
                                             className="grid-img"
@@ -177,11 +208,13 @@ export default function Architecture() {
                 </div>
             </div>
 
+            {lightbox}
+
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }
@@ -287,6 +320,10 @@ export default function Architecture() {
                 .projects-list {
                     margin-bottom: 40px;
                 }
+
+                .experiences-list { margin-top: 40px; }
+                .experiences-title { font-size: 13px; font-weight: bold; letter-spacing: 0.05em; margin-bottom: 20px; }
+                .experience-text { font-size: 11px; line-height: 1.5; margin: 4px 0 0 0; }
 
                 .project-group {
                     margin-bottom: 25px;

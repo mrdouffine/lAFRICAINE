@@ -46,6 +46,18 @@ export default function Board() {
                             <h3 className="section-header">BOARDS</h3>
 
                             <div className="listing-item">
+                                <p>Musée des Civilisations Noires (MCN)</p>
+                                <p>Membre du Conseil d’administration</p>
+                                <p>Sénégal</p>
+                            </div>
+
+                            <div className="listing-item">
+                                <p>Value AI Institute</p>
+                                <p>Board</p>
+                                <p>Londres</p>
+                            </div>
+
+                            <div className="listing-item">
                                 <p><a href="https://www.bluemindfoundation.org/" target="_blank" rel="noopener noreferrer"><span className="highlight">Bluemind Foundation</span></a></p>
                                 <p>Programme « Heal by Hair »</p>
                                 <p>Comité des Parties Prenantes</p>
@@ -92,6 +104,11 @@ export default function Board() {
 
                         <div className="section-block">
                             <h3 className="section-header">MENTORSHIP – JURY</h3>
+                            <div className="listing-item">
+                                <p><a href="https://en.entourage.africa/expert-en/sename-koffi-agbodjinou/" target="_blank" rel="noopener noreferrer"><span className="highlight">Entourage Africa</span></a></p>
+                                <p>Expert – Masterclass</p>
+                                <p>Afrique</p>
+                            </div>
 
                             <div className="listing-item">
                                 <p>Dekoloniale - Berlin Residency</p>

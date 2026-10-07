@@ -1,9 +1,18 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLightbox } from '../../components/Lightbox';
 
 export default function Honor() {
     const prix = [
+        {
+            text: "Les Grandes Figures de l’Architecture Africaine Contemporaine",
+            detail: <><a href="https://forbesafrique.com/les-grandes-figures-de-larchitecture-africaine-contemporaine/" target="_blank" rel="noopener noreferrer" className="highlight-link">Forbes Afrique</a> – 2026</>
+        },
+        {
+            text: "Les 100 qui font la ville",
+            detail: <><a href="https://les100quifontlaville.fr/item/607-sename-koffi-agbodjinou-l-africaine-d-architecture.html" target="_blank" rel="noopener noreferrer" className="highlight-link">Innovapresse / Traits Urbains</a> – 2023</>
+        },
         {
             text: "AFRICA’S 50 DIGITAL CHAMPIONS",
             detail: "Africa Digital Festival – 2020"
@@ -47,6 +56,8 @@ export default function Honor() {
     const galleryImages = [
         "1.jpg", "2.jpg", "3.png", "4.jpg", "5.jpg", "6.png", "7.jpg", "8.jpg", "9.png"
     ];
+
+    const { open, lightbox } = useLightbox(galleryImages.map((f) => `/images/honor/${f}`));
 
     return (
         <div className="page-container">
@@ -114,7 +125,7 @@ export default function Honor() {
                         <div className="images-grid-container">
                             {galleryImages.map((filename, index) => (
                                 <div key={index} className="grid-item">
-                                    <a href={`/images/honor/${filename}`} target="_blank" rel="noopener noreferrer">
+                                    <a href={`/images/honor/${filename}`} onClick={open(index)}>
                                         <img
                                             src={`/images/honor/${filename}`}
                                             className="grid-img"
@@ -129,11 +140,13 @@ export default function Honor() {
                 </div>
             </div>
 
+            {lightbox}
+
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

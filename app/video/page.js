@@ -8,6 +8,31 @@ import { useState } from 'react';
 export default function Video() {
     const videoItems = [
         {
+            title: "Le Togo que tu veux fuir sera l'épicentre de tout",
+            year: "Atigan Media",
+            embedUrl: "https://www.youtube.com/embed/5tTUsTv4oF0"
+        },
+        {
+            title: "Ce que personne ne dit sur le capitalisme digital !",
+            year: "La Notif",
+            embedUrl: "https://www.youtube.com/embed/InphxjqvCyM"
+        },
+        {
+            title: "African Cities Voices #2 : architecture et anthropologie",
+            year: "African Cities Lab",
+            embedUrl: "https://www.youtube.com/embed/YaoWpNQV8wU"
+        },
+        {
+            title: "Unfolding space: Alternative spatial practices from Africa",
+            year: "Architectural Association, Londres, 2025",
+            embedUrl: "https://www.youtube.com/embed/iBPj7Yc-bn4"
+        },
+        {
+            title: "Utopies urbaines – Échange d'abondance",
+            year: "Rencontres Mingi Wingi, Bruxelles, 2024",
+            embedUrl: "https://www.youtube.com/embed/5JfXXYhS2TQ"
+        },
+        {
             title: "The Turtle of the Yellow Sea",
             year: "2022",
             embedUrl: "https://www.youtube.com/embed/lcZL3ATJ9gk"
@@ -25,6 +50,11 @@ export default function Video() {
         {
             title: "Demain, la ville africaine",
             year: "Le Monde Afrique",
+            embedUrl: "https://www.youtube.com/embed/G4Rl4FIFHGU"
+        },
+        {
+            title: "Villes du Futur",
+            year: "We Love Green, 2021",
             embedUrl: "https://www.youtube.com/embed/jzOItUiGu7M"
         },
         {
@@ -240,7 +270,7 @@ export default function Video() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

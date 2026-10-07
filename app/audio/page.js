@@ -11,6 +11,25 @@ export default function Audio() {
             title: "PODCASTS",
             items: [
                 {
+                    heading: "AFD, Des Nouvelles de Demain",
+                    content: <a href="https://podcasts.apple.com/fr/podcast/sename-koffi-r%C3%A9inventer-larchitecture-%C3%A0-partir-des/id1691494308?i=1000623229210" target="_blank" rel="noopener noreferrer" className="highlight-link">Réinventer l'architecture à partir des archives</a>
+                },
+                {
+                    heading: "France Culture, Esprit des lieux",
+                    content: <a href="https://www.radiofrance.fr/franceculture/podcasts/esprit-des-lieux/comment-decoloniser-les-architectures-du-continent-africain-9202767" target="_blank" rel="noopener noreferrer" className="highlight-link">Comment décoloniser les architectures du continent africain ?</a>
+                },
+                {
+                    heading: "France Culture, Avec philosophie",
+                    content: <>
+                        Série « Philosopher au Sud (Amérique Latine, Afrique, Caraïbe) »<br />
+                        <a href="https://www.radiofrance.fr/franceculture/podcasts/avec-philosophie/une-autre-philosophie-de-la-nature-et-de-la-ville-9180803" target="_blank" rel="noopener noreferrer" className="highlight-link">Épisode 4/4 : Une autre philosophie de la nature et de la ville ?</a>
+                    </>
+                },
+                {
+                    heading: "Techologie",
+                    content: <a href="https://techologie.net/episodes/77-alternatives-emancipatrices/" target="_blank" rel="noopener noreferrer" className="highlight-link">#77 Alternatives émancipatrices face au capitalisme technologique</a>
+                },
+                {
                     heading: "Le Code a changé. Podcast – France Inter.",
                     content: <a href="https://www.radiofrance.fr/franceinter/podcasts/le-code-a-change/quand-le-numerique-colonise-la-ville-africaine-6270137" target="_blank" rel="noopener noreferrer" className="highlight-link">Quand le numérique colonise la ville africaine ! ?</a>
                 },
@@ -154,7 +173,7 @@ export default function Audio() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: Arial, Helvetica, sans-serif;
                     color: #000;
                 }

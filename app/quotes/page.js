@@ -5,6 +5,9 @@ import Link from 'next/link';
 export default function Quotes() {
     const quotes = [
         {
+            text: ["Les frontières les plus importantes ne sont pas celles que l’on passe mais celles qui nous passent"]
+        },
+        {
             text: ["Au commerce des idées, il y a les produits en vitrine… et d’autres qu’il faut aller chercher au fond de la boutique"]
         },
         {
@@ -94,7 +97,7 @@ export default function Quotes() {
                 body {
                     margin: 0;
                     padding: 0;
-                    background-color: #ffffff;
+                    background-color: #BEBEBE;
                     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
                     color: #000;
                 }
